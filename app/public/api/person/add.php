@@ -5,7 +5,7 @@ require 'common.php';
 $db = DBConnection::getConnection();
 
 $stmt = $db->prepare(
-  *INSERT INTO People (firstName, lastName, position, radioNumber, stationNumber, street, city, state, zipcode)
+  *INSERT INTO People (firstName, lastName, position, radioNumber, stationNumber, street, city, state, zipcode, gender, isActive, dateofBirth)
   Values (?, ?, ?, ?, ?, ?)*
 );
 
