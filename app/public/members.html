@@ -35,7 +35,7 @@
 						<section id="intro" class="wrapper style1 fullscreen fade-up">
 							<div class="inner">
 								<h1>Members</h1>
-								<p>Meet our active members :) They're pretty cool.</p>
+								<p>Meet our current members and add/edit new members</p>
 								<ul class="actions">
 									<li><a href="#one" class="button scrolly">Learn more</a></li>
 								</ul>
@@ -44,40 +44,26 @@
 			</div>
       <!-- Table -->
         <section>
-          <h2>Fire Guys and Gals</h2>
-          <div class="table-wrapper"> id="PersonalID"
-						<div class="persons" v-for="person in persons"
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>S.A.B.</th>
-                  <th>Street address</th>
-                  <th>City</th>
-                  <th>State</th>
-                  <th>Zip Code</th>
-                  <th>Phone</th>
-                  <th>Station #</th>
-                  <th>Radio #</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Antoine Van Dyke</td>
-                  <td>Male</td>
-                  <td>69 UrMumsHouse Drive</td>
-                  <td>Atlanta</td>
-                  <td>GA</td>
-                  <td>12345</td>
-                  <td>867-5309</td>
-                  <td>69</td>
-                  <td>96</td>
-                </tr>
-              </tbody>
-              <tfoot>
-              </tfoot>
-            </table>
+          <h2>Existing Members</h2>
+					<div class="container-fluid">
+          	<div class="row" id="PersonalID">
+						<div class="persons" v-for="person in persons">
+						<span class ="PersonalID"> {{ person.PersonalID}}</span>,
+						<span class ="firstName"> {{ person.firstName}}</span>,
+						<span class ="lastName"> {{ person.lastName}}</span>,
+						<span class ="street"> {{ person.street}}</span>,
+						<span class ="city"> {{ person.city}}</span>,
+						<span class ="state"> {{ person.state}}</span>,
+						<span class ="zipcode"> {{ person.zipcode}}</span>,
+						<span class ="radioNumber"> {{ person.radioNumber}}</span>,
+						<span class ="stationNumber"> {{ person.stationNumber}}</span>,
+						<span class ="gender"> {{ person.gender}}</span>,
+						<span class ="position"> {{ person.position}}</span>,
+						<span class ="isActive"> {{ person.isActive}}</span>,
+						<span class ="dateofBirth"> {{ person.dateofBirth}}</span>
+					</div></br>
           </div>
+					</div>
 
       <!-- Form -->
         <div>
@@ -167,6 +153,8 @@
     </footer>
 
   <!-- Scripts -->
+	<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.scrollex.min.js"></script>
 	<script src="js/jquery.scrolly.min.js"></script>
@@ -174,6 +162,7 @@
 	<script src="js/breakpoints.min.js"></script>
 	<script src="js/util.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/members.app.js"></script>
 
 </body>
 </html>

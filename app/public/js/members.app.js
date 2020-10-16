@@ -1,4 +1,4 @@
-waitingApp = new Vue({
+var App = new Vue({
   el: "#PersonalID",
   data:{
     persons:[{
@@ -18,8 +18,8 @@ waitingApp = new Vue({
   }]
 },
 methods:{
-  methods:{
-    fetchUser(api/person/')
+    fetchUser() {
+      fetch("api/person/")
     .then(response => response.json())
     .then(json =>{
       this.persons=json;
