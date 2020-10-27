@@ -35,21 +35,25 @@
 				<!-- Main -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1 class="major">Reports</h1>
+							<h1 class="major"> Welcome to our Reports Page!</h1>
+              <h4> Please select a report to view </h4>
               <!-- dropdown from https://www.w3schools.com/howto/howto_css_dropdown.asp & https://stackoverflow.com/questions/6315437/display-selected-item-from-dropdown-onchange-function-into-html-label-through-ja -->
               <div id="label"></div>
               <div class="dropdown">
                 <select id="mySelect" onchange="copy();">
-                  <option value="">Select a Report:</option>
-                  <option value="exp" >Expired Certifications</option>
-                  <option value="memberlist" >Member List</option>
-                  <option value="other" >Other</option>
+                  <option>Select a Report:</option>
+                  <option onclick="launch(event, 'exprCerts')" >Expired Certifications</option>
+                  <option  onclick="launch(event, 'memList')">Member List</option>
+                  <option onclick="launch(event, 'exprCerts')" >Other</option>
                 </select>
                 <p id="demo"></p>
 
               </div>
+              <div id='expoCerts' class = 'viewReport'>
+                <h2> Expired Certifcations Report </h2>
 
 						</div>
+
 					</section>
 
 			</div>
