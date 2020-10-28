@@ -1,0 +1,4 @@
+MYSQL_DATABASE=MSIS_Core
+MYSQL_HOST=msiscore.cq1j0jjbn5cv.us-east-1.rds.amazonaws.com
+MYSQL_USER=binita
+MYSQL_PASSWORD=Bangusa18
