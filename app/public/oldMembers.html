@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Members</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="css/main.css" />
+		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+    <!-- Sidebar -->
+      <section id="sidebar">
+        <div class="inner">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="History.html">History</a></li>
+              <li><a href="members.html">Members</a></li>
+              <li><a href="report.html">Reports</a></li>
+							<li><a href="certifications.html">Certifications</a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+			<!-- Wrapper -->
+				<div id="wrapper">
+
+					<!-- Intro -->
+						<section id="intro" class="wrapper style1 fullscreen fade-up">
+							<div class="inner">
+								<h1>Members</h1>
+								<p>Meet our current members and add/edit new members</p>
+								<ul class="actions">
+									<li><a href="#one" class="button scrolly">Learn more</a></li>
+								</ul>
+							</div>
+						</section>
+			</div>
+      <!-- Table -->
+        <section>
+          <h2>Existing Members</h2>
+					<div class="container-fluid">
+          	<div class="row" id="PersonalID">
+						<div class="persons" v-for="person in persons">
+						<span class ="PersonalID"> {{ person.PersonalID}}</span>,
+						<span class ="firstName"> {{ person.firstName}}</span>,
+						<span class ="lastName"> {{ person.lastName}}</span>,
+						<span class ="street"> {{ person.street}}</span>,
+						<span class ="city"> {{ person.city}}</span>,
+						<span class ="state"> {{ person.state}}</span>,
+						<span class ="zipcode"> {{ person.zipcode}}</span>,
+						<span class ="radioNumber"> {{ person.radioNumber}}</span>,
+						<span class ="stationNumber"> {{ person.stationNumber}}</span>,
+						<span class ="gender"> {{ person.gender}}</span>,
+						<span class ="position"> {{ person.position}}</span>,
+						<span class ="isActive"> {{ person.isActive}}</span>,
+						<span class ="dateofBirth"> {{ person.dateofBirth}}</span>
+					</div></br>
+          </div>
+					</div>
+
+      <!-- Form -->
+        <div>
+          <section>
+          <h2>Form</h2>
+          <form method="post" v-on:submit.prevent = "addPerson()">
+            <div class="form-group row">
+              <div class="col-12">
+                <input v-model = 'newMember.firstName'type="text" name="firstName" id="firstName" value="" placeholder="First Name" />
+              </div>
+							<div class="col-12">
+								<input v-model = 'newMember.lastName' type="text" name="lastName" id="lastName" value="" placeholder="Last Name" />
+							</div>
+              <div class="col-12">
+                <input v-model = 'newMember.street'type="text" name="street" id="street" value="" placeholder="Street Address" />
+              </div>
+              <div class="col-12">
+                <input v-model = 'newMember.city' type="text" name="city" id="city" value="" placeholder="City" />
+              </div>
+              <div class="col-12">
+                <input v-model = 'newMember.zip'type="text" name="zip" id="zip" value="" placeholder="Zip Code" />
+              </div>
+              <div class="col-12">
+                <input v-model = 'newMember.state'type="text" name="state" id="state" value="" placeholder="State" />
+              </div>
+              <div class="col-12">
+                <input v-model = 'newMember.phonenumber'type="text" name="phone" id="phone" value="" placeholder="Phone Number" />
+              </div>
+              <div class="col-12">
+                <input v-model = 'newMember.radioNumber'type="text" name="radioNumber" id="radioNumber" value="" placeholder="Radio Number" />
+              </div>
+              <div class="col-12">
+                <input v-model = 'newMember.stationNumber' type="text" name="stationNumber" id="stationNumber" value="" placeholder="Station Number" />
+              </div>
+              <div class="col-12">
+                <input v-model = 'newMember.certification'type="text" name="certification" id="certification" value="" placeholder="Certification" />
+              </div>
+							<div class="col-12">
+                <input v-model = 'newMember.gender'type="text" name="gender" id="gender" value="" placeholder="Gender" />
+              </div>
+							<div class="col-12">
+                <input v-model = 'newMember.position'type="text" name="position" id="position" value="" placeholder="Position" />
+              </div>
+							<div class="col-12">
+                <input v-model = 'newMember.DateofBirth'type="text" name="DateofBirth" id="DateofBirth" value="" placeholder="DOB" />
+              </div>
+              <div class="col-12">
+                <select name="demo-category" id="demo-category">
+                  <option value="">- Category -</option>
+                  <option value="1">Manufacturing</option>
+                  <option value="1">Shipping</option>
+                  <option value="1">Administration</option>
+                  <option value="1">Human Resources</option>
+                </select>
+              </div>
+              <div class="col-4 col-12-small">
+                <input type="radio" id="demo-priority-low" name="demo-priority" checked>
+                <label for="demo-priority-low">Low</label>
+              </div>
+              <div class="col-4 col-12-small">
+                <input type="radio" id="demo-priority-normal" name="demo-priority">
+                <label for="demo-priority-normal">Normal</label>
+              </div>
+              <div class="col-4 col-12-small">
+                <input type="radio" id="demo-priority-high" name="demo-priority">
+                <label for="demo-priority-high">High</label>
+              </div>
+              <div class="col-6 col-12-small">
+                <input type="checkbox" id="demo-copy" name="demo-copy">
+                <label for="demo-copy">Email me a copy</label>
+              </div>
+              <div class="col-6 col-12-small">
+                <input type="checkbox" id="demo-human" name="demo-human" checked>
+                <label for="demo-human">Not a robot</label>
+              </div>
+              <div class="col-12">
+                <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+              </div>
+              <div class="col-12">
+								<div class='col-4'>
+									<form v-on:submit.prevent="fetchUser">
+										<button type="submit" class="btn btn-primary" value="submit">Add New Member</button>
+									</form>
+								</div>
+								<div class='col-4'>
+									<form v-on:submit.prevent="fetchUser">
+										<button type="submit" class="btn btn-primary" value="submit">Edit Member</button>
+									</form>
+								</div>
+								<div class='col-4'>
+									<form v-on:submit.prevent="fetchUser">
+										<button type="submit" class="btn btn-primary" value="submit">Delete Member</button>
+									</form>
+								</div>
+              </div>
+            </div>
+          </form>
+        </section>
+        </div>
+
+  <!-- Footer -->
+    <footer id="footer" class="wrapper style1-alt">
+      <div class="inner">
+        <ul class="menu">
+          <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </footer>
+
+  <!-- Scripts -->
+	<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.scrollex.min.js"></script>
+	<script src="js/jquery.scrolly.min.js"></script>
+	<script src="js/browser.min.js"></script>
+	<script src="js/breakpoints.min.js"></script>
+	<script src="js/util.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/members.app.js"></script>
+
+</body>
+</html>
