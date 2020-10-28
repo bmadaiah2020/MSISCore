@@ -5,24 +5,16 @@ require 'common.php';
 $db = DBConnection::getConnection();
 
 $stmt = $db->prepare(
-  *INSERT INTO People (firstName, lastName, position, radioNumber, stationNumber, street, city, state, zipcode, gender, isActive, dateofBirth, email)
-  Values (?, ?, ?, ?, ?, ?)*
+  *INSERT INTO Person_Certification (PersonalID, CertificationID, expirationDate, certificationStatus, renewedDate)
+  Values (?, ?, ?, ?, ?)*
 );
 
 $stmt->execute([
-  $_POST['firstName'],
-  $_POST['lastName'],
-  $_POST['position'],
-  $_POST['radioNumber'],
-  $_POST['stationNumber'],
-  $_POST['street'],
-  $_POST['city'],
-  $_POST['state'],
-  $_POST['zipcode'],
-  $_POST['gender'],
-  $_POST['isActive'],
-  $_POST['dateofBirth'],
-  $_POST['email'],
+  $_POST['PersonalID'],
+  $_POST['CertificationID'],
+  $_POST['expirationDate'],
+  $_POST['certificationStatus'],
+  $_POST['renewedDate'],
 ]);
 
 header('HTTP/1.1 303 See Other');
