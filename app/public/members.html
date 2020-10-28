@@ -126,12 +126,22 @@
                         <div class="col-12">
                           <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
                         </div>
+
+
                         <div class="col-12">
           								<div class='col-4'>
-          									<form v-on:submit.prevent="fetchUser">
-          										<button type="submit" class="btn btn-primary" value="submit">Add New Member</button>
-          									</form>
+														<form id="newCommentForm" v-on:submit.prevent="addComment()">
+															<div class="Comment">
+                      				<label for="commentText">Comment Text</label>
+                      				<input type="text" v-model="newComment.commentText" class="form-control" id="commentText" placeholder="Comment">
+                  				</div>
+                  				<input type="submit" class="button" value = "Create Comment" id="submitNewComment">
+              							</form>
           								</div>
+
+
+
+
 													<br>
           								<div class='col-4'>
           									<form v-on:submit.prevent="fetchUser">
