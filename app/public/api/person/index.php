@@ -9,10 +9,10 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM Person';
 $vars = [];
 
-if (isset($_GET['id'])) {
+if (isset($_GET['PersonalID'])) {
   // This is an example of a parameterized query
   $sql = 'SELECT * FROM Person WHERE PersonalID = ?';
-  $vars = [ $_GET['id'] ];
+  $vars = [ $_GET['PersonalID'] ];
 }
 
 $stmt = $db->prepare($sql);

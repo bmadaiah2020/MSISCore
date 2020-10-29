@@ -2,11 +2,11 @@
 
 require 'common.php';
 
-$db = DbConnection::getConnection();
+$db = DBConnection::getConnection();
 
 $stmt = $db->prepare(
-  'INSERT INTO Person (firstName, lastName, street, city, state, zipcode, radioNumber, stationNumber, gender, email, position, isActive, dateofBirth)
-  Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+  'INSERT INTO People (firstName, lastName, street, city, state, zipcode, radioNumber, stationNumber, gender, email, position, isActive, dateofBirth)
+  Values (?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
@@ -29,4 +29,5 @@ $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.ph
 
 
 header('HTTP/1.1 303 See Other');
+header('Content-Type: application/json');
 header('Location: ../person/?id=' . $pk);
