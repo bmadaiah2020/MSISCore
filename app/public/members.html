@@ -19,7 +19,7 @@
 				<div class="inner">
 					<nav>
 						<ul>
-							<li><a href="#intro">Home</a></li>
+							<li><a href="index.html">Home</a></li>
 							<li><a href="History.html">History</a></li>
 							<li><a href="members.html">Members</a></li>
 							<li><a href="report.html">Reports</a></li>
@@ -52,23 +52,48 @@
                     <h2>Existing Members</h2>
           					<div class="container-fluid">
                     	<div class="row">
-          						<div class="persons" v-for="person in persons">
-          						<span class ="PersonalID"> {{ person.PersonalID}}</span>,
-          						<span class ="firstName"> {{ person.firstName}}</span>,
-          						<span class ="lastName"> {{ person.lastName}}</span>,
-          						<span class ="street"> {{ person.street}}</span>,
-          						<span class ="city"> {{ person.city}}</span>,
-          						<span class ="state"> {{ person.state}}</span>,
-          						<span class ="zipcode"> {{ person.zipcode}}</span>,
-          						<span class ="radioNumber"> {{ person.radioNumber}}</span>,
-          						<span class ="stationNumber"> {{ person.stationNumber}}</span>,
-          						<span class ="gender"> {{ person.gender}}</span>,
-          						<span class ="position"> {{ person.position}}</span>,
-          						<span class ="isActive"> {{ person.isActive}}</span>,
-          						<span class ="dateofBirth"> {{ person.dateofBirth}}</span>
-          					</div></br>
-                    </div>
-          					</div>
+												<table>
+	    										<thead>
+			        							<tr>
+															<th>Personal ID</th>
+									            <th>First Name</th>
+									            <th>Last Name</th>
+									            <th>Street</th>
+									            <th>City</th>
+									            <th>State</th>
+									            <th>Zip Code</th>
+									            <th>Email</th>
+									            <th>Date of Birth</th>
+									            <th>Start Date</th>
+									            <th>Gender</th>
+									            <th>Position</th>
+									            <th>Radio Number</th>
+									            <th>Station Number</th>
+									            <th>Is Active</th>
+			        						</tr>
+	    						      </thead>
+	    									<tbody>
+													<tr v-for = "person in persons">
+														<td>{{ person.PersonalID}}</td>
+									          <td>{{ person.firstName}}</td>
+									          <td>{{ person.lastName}}</td>
+									          <td>{{ person.street}}</td>
+									          <td>{{ person.city}}</td>
+									          <td>{{ person.state}}</td>
+									          <td>{{ person.zipcode}}</td>
+									          <td>{{ person.email}}</td>
+									          <td>{{ person.dateofBirth}}</td>
+									          <td>{{ person.startDate}}</td>
+									          <td>{{ person.gender}}</td>
+									          <td>{{ person.position}}</td>
+									          <td>{{ person.radioNumber}}</td>
+									          <td>{{ person.stationNumber}}</td>
+									          <td>{{  person.isActive}}</td>
+			        					</tr>
+			    					</tbody>
+									</table>
+									</div>
+          				</div>
 
                 <!-- Form -->
                   <div>
@@ -150,6 +175,7 @@
                   </div>
 								</div>
 							</div>
+						</div>
 						</section>
 
 
@@ -192,7 +218,13 @@
 			</div>
 
 		<!-- Footer -->
-			
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
 
 		<!-- Scripts -->
 		<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
