@@ -16,7 +16,7 @@ var App = new Vue({
       isActive:'',
       dateofBirth:''
   }],
-  newPerson:{
+  newMember:{
     firstName:'',
     lastName:'',
     street:'',
@@ -31,7 +31,7 @@ var App = new Vue({
     isActive:'',
     dateofBirth:''
   }
-
+  },
   created(){
     this.fetchUser();
   },
@@ -47,9 +47,10 @@ methods:{
 
   },
   addUser() {
+    console.log('addUser() was called!'+this.newMember.firstName);
      fetch('api/person/add.php', {
        method:'POST',
-       body: JSON.stringify(this.newUser),
+       body: JSON.stringify(this.newMember),
        headers: {
          "Content-Type": "application/json; charset=utf-8"
        }
@@ -58,13 +59,13 @@ methods:{
      .then( json => {
        console.log("Returned from post:", json);
        // TODO: test a result was returned!
-       this.comments = json;
-       this.newComment = this.newUserData();
+       this.persons.push(json[0]);
+       this.newMember = this.newMemberData();
      });
      console.log("Creating (POSTing)...!");
-     console.log(this.newUser);
+     console.log(this.newMember);
    },
-newCommentData() {
+newMemberData() {
   return{
     firstName:'',
     lastName:'',
@@ -79,9 +80,12 @@ newCommentData() {
     position:'',
     isActive:'',
     dateofBirth:''
-}}
+}
 
 },
-
+  formatDate(d){
+    return moment(d).format("MMMM Do YYYY")
+  }
+}
 
 })
