@@ -6,6 +6,10 @@
 
 /* Spotlights */
 
+table {
+  width: 75%;
+}
+
 	.spotlights > section > .image:before {
 		opacity: 0 !important;
 	}
