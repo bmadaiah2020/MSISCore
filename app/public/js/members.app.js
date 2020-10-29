@@ -84,7 +84,7 @@ newMemberData() {
 
 },
   formatDate(d){
-    return moment(d).format("MMMM Do YYYY")
+    return moment.utc(d).local().calendar();
   }
 }
 
