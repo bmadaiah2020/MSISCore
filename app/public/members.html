@@ -45,13 +45,13 @@
 					<section id="one" class="wrapper style2 spotlights">
 						<section>
 						<!--	<a href="#" class="image"><img src="css/images/pic01.jpg" alt="" data-position="center center" /></a> -->
-							<div class="content">
+							<div class="content" id="PersonalID">
 								<div class="inner">
                 <!-- Table -->
                   <section>
                     <h2>Existing Members</h2>
           					<div class="container-fluid">
-                    	<div class="row" id="PersonalID">
+                    	<div class="row">
           						<div class="persons" v-for="person in persons">
           						<span class ="PersonalID"> {{ person.PersonalID}}</span>,
           						<span class ="firstName"> {{ person.firstName}}</span>,
@@ -74,7 +74,7 @@
                   <div>
                     <section>
                     <h2>Form</h2>
-                    <form method="post" v-on:submit.prevent = "addPerson()">
+                    <form method="post" v-on:submit.prevent = "addUser()">
                       <div class="form-group row">
                         <div class="col-12">
                           <input v-model = 'newMember.firstName'type="text" name="firstName" id="firstName" value="" placeholder="First Name" />
@@ -95,16 +95,10 @@
                           <input v-model = 'newMember.state'type="text" name="state" id="state" value="" placeholder="State" />
                         </div>
                         <div class="col-12">
-                          <input v-model = 'newMember.phonenumber'type="text" name="phone" id="phone" value="" placeholder="Phone Number" />
-                        </div>
-                        <div class="col-12">
                           <input v-model = 'newMember.radioNumber'type="text" name="radioNumber" id="radioNumber" value="" placeholder="Radio Number" />
                         </div>
                         <div class="col-12">
                           <input v-model = 'newMember.stationNumber' type="text" name="stationNumber" id="stationNumber" value="" placeholder="Station Number" />
-                        </div>
-                        <div class="col-12">
-                          <input v-model = 'newMember.certification'type="text" name="certification" id="certification" value="" placeholder="Certification" />
                         </div>
           							<div class="col-12">
                           <input v-model = 'newMember.gender'type="text" name="gender" id="gender" value="" placeholder="Gender" />
@@ -112,6 +106,9 @@
           							<div class="col-12">
                           <input v-model = 'newMember.position'type="text" name="position" id="position" value="" placeholder="Position" />
                         </div>
+												<div class="col-12">
+													<input v-model = 'newMember.isActive'type="text" name="isActive" id="isActive" value="" placeholder="Is Active" />
+												</div>
           							<div class="col-12">
                           <input v-model = 'newMember.DateofBirth'type="text" name="DateofBirth" id="DateofBirth" value="" placeholder="DOB" />
                         </div>
@@ -130,28 +127,18 @@
 
                         <div class="col-12">
           								<div class='col-4'>
-														<form id="newCommentForm" v-on:submit.prevent="addComment()">
-															<div class="Comment">
-                      				<label for="commentText">Comment Text</label>
-                      				<input type="text" v-model="newComment.commentText" class="form-control" id="commentText" placeholder="Comment">
-                  				</div>
-                  				<input type="submit" class="button" value = "Create Comment" id="submitNewComment">
-              							</form>
+                  				<input type="submit" class="button" value = "Create Member" id="submitNewComment">
           								</div>
-
-
-
-
 													<br>
           								<div class='col-4'>
-          									<form v-on:submit.prevent="fetchUser">
+          									<!-- <form v-on:submit.prevent="fetchUser">
           										<button type="submit" class="btn btn-primary" value="submit">Edit Member</button>
-          									</form>
+          									</form> -->
           								</div>
           								<div class='col-4'>
-          									<form v-on:submit.prevent="fetchUser">
+          									<!-- <form v-on:submit.prevent="fetchUser">
           										<button type="submit" class="btn btn-primary" value="submit">Delete Member</button>
-          									</form>
+          									</form> -->
           								</div>
                         </div>
                       </div>
