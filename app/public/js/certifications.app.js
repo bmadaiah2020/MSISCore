@@ -13,7 +13,6 @@ var app = new Vue({
         PersonalID: '',
         CertificationID: '',
         expirationDate: '',
-        certificationStatus: '',
         renewedDate: ''
       }
     },

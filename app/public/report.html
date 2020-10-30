@@ -49,10 +49,10 @@
                 <p id="demo"></p>
 
               </div>
-              <div id='one' class = 'container-fluid'>
+              <div id='expired' class = 'container-fluid'>
                 <h2> Expired Certifcations Report </h2>
-                <div id='PersonalID'>
-                  <table class = 'row'>
+                <div id='expiredcert'>
+                  <table class = 'expiredcert'>
                     <thread>
                       <tr>
                         <th> Personal ID </th>
@@ -63,12 +63,11 @@
                       </tr>
                     </thread>
                     <tbody>
-                      <tr v-for="certification in certifications" v-on:click=''>
-                        <td scope ='row'> {{ person.PersonalID}} </td>
-                        <td> {{ person.firstName}} </td>
-                        <td> {{ person.lastName}} </td>
+                      <tr v-for="certification in expiredcert" v-on:click=''>
+                        <td scope ='row'> {{ certification.PersonalID}} </td>
                         <td> {{ certification.CertificationID}} </td>
                         <td> {{ certification.expirationDate}} </td>
+                          <td> {{ certification.renewedDate}} </td>
                       </tr>
                     </tbody>
                   </table>
