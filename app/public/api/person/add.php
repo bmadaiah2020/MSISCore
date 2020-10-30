@@ -5,8 +5,8 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 $stmt = $db->prepare(
-  'INSERT INTO Person (firstName, lastName, street, city, state, zipcode, radioNumber, stationNumber, gender, email, position, isActive, dateofBirth)
-  Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+  'INSERT INTO Person (firstName, lastName, street, city, state, zipcode, radioNumber, stationNumber, gender, email, position, isActive, dateofBirth,workNumber,mobileNumber)
+  Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
@@ -22,7 +22,9 @@ $stmt->execute([
   $_POST['email'],
   $_POST['position'],
   $_POST['isActive'],
-  $_POST['dateofBirth']
+  $_POST['dateofBirth'],
+  $_POST['mobileNumber'],
+  $_POST['workNumber']
 ]);
 
 $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php

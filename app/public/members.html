@@ -42,7 +42,7 @@
 					</section>
 
 				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
+					<!-- <section id="one" class="wrapper style2 spotlights"> -->
 						<section>
 						<!--	<a href="#" class="image"><img src="css/images/pic01.jpg" alt="" data-position="center center" /></a> -->
 							<div class="content" id="PersonalID">
@@ -64,12 +64,13 @@
 									            <th>Zip Code</th>
 									            <th>Email</th>
 									            <th>Date of Birth</th>
-									            <th>Start Date</th>
 									            <th>Gender</th>
 									            <th>Position</th>
 									            <th>Radio Number</th>
 									            <th>Station Number</th>
 									            <th>Is Active</th>
+															<th>Work Number</th>
+															<th>Mobile Number</th>
 			        						</tr>
 	    						      </thead>
 	    									<tbody>
@@ -83,12 +84,13 @@
 									          <td>{{ person.zipcode}}</td>
 									          <td>{{ person.email}}</td>
 									          <td>{{ person.dateofBirth}}</td>
-									          <td>{{ person.startDate}}</td>
 									          <td>{{ person.gender}}</td>
 									          <td>{{ person.position}}</td>
 									          <td>{{ person.radioNumber}}</td>
 									          <td>{{ person.stationNumber}}</td>
 									          <td>{{  person.isActive}}</td>
+														<td>{{  person.workNumber}}</td>
+														<td>{{  person.mobileNumber}}</td>
 			        					</tr>
 			    					</tbody>
 									</table>
@@ -135,8 +137,17 @@
 													<input v-model = 'newMember.isActive'type="text" name="isActive" id="isActive" value="" placeholder="Is Active" />
 												</div>
           							<div class="col-12">
-                          <input v-model = 'newMember.DateofBirth'type="text" name="DateofBirth" id="DateofBirth" value="" placeholder="DOB" />
+                          <input v-model = 'newMember.dateofBirth'type="date" name="dateofBirth" id="dateofBirth" value="" placeholder="DOB" />
                         </div>
+												<div class="col-12">
+													<input v-model = 'newMember.email'type="text" name="email" id="email" value="" placeholder="Email" />
+												</div>
+												<div class="col-12">
+													<input v-model = 'newMember.workNumber'type="text" name="workNumber" id="workNumber" value="" placeholder="Work Number" />
+												</div>
+												<div class="col-12">
+													<input v-model = 'newMember.mobileNumber'type="text" name="mobileNumber" id="mobileNumber" value="" placeholder="Mobile Number" />
+												</div>
                         <div class="col-6 col-12-small">
                           <input type="checkbox" id="demo-copy" name="demo-copy">
                           <label for="demo-copy">Email me a copy</label>

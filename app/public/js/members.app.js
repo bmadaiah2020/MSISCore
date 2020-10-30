@@ -14,7 +14,9 @@ var App = new Vue({
       email:'',
       position:'',
       isActive:'',
-      dateofBirth:''
+      dateofBirth:'',
+      workNumber:'',
+      mobileNumber:''
   }],
   newMember:{
     firstName:'',
@@ -29,7 +31,10 @@ var App = new Vue({
     email:'',
     position:'',
     isActive:'',
-    dateofBirth:''
+    dateofBirth:'',
+    workNumber:'',
+    mobileNumber:''
+
   }
   },
   created(){
@@ -48,6 +53,7 @@ methods:{
   },
   addUser() {
     console.log('addUser() was called!'+this.newMember.firstName);
+    console.log('date:'+this.newMember.DateofBirth);
      fetch('api/person/add.php', {
        method:'POST',
        body: JSON.stringify(this.newMember),
@@ -79,7 +85,9 @@ newMemberData() {
     email:'',
     position:'',
     isActive:'',
-    dateofBirth:''
+    dateofBirth:'',
+    workNumber:'',
+    mobileNumber:''
 }
 
 },
