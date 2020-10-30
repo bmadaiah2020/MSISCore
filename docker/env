@@ -1,4 +1,4 @@
-MYSQL_DATABASE=MSIS_Core
-MYSQL_HOST=msiscore.cq1j0jjbn5cv.us-east-1.rds.amazonaws.com
-MYSQL_USER=binita
-MYSQL_PASSWORD=Bangusa18
+MYSQL_DATABASE=team9
+MYSQL_HOST=team9.c3xcnf0bparn.us-east-1.rds.amazonaws.com
+MYSQL_USER=admin
+MYSQL_PASSWORD=buybitcoin
