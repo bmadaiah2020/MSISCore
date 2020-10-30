@@ -69,6 +69,8 @@
 									            <th>Radio Number</th>
 									            <th>Station Number</th>
 									            <th>Is Active</th>
+															<th>Work Number</th>
+															<th>Mobile Number</th>
 			        						</tr>
 	    						      </thead>
 	    									<tbody>
@@ -87,6 +89,8 @@
 									          <td>{{ person.radioNumber}}</td>
 									          <td>{{ person.stationNumber}}</td>
 									          <td>{{  person.isActive}}</td>
+														<td>{{  person.workNumber}}</td>
+														<td>{{  person.mobileNumber}}</td>
 			        					</tr>
 			    					</tbody>
 									</table>
@@ -133,10 +137,16 @@
 													<input v-model = 'newMember.isActive'type="text" name="isActive" id="isActive" value="" placeholder="Is Active" />
 												</div>
           							<div class="col-12">
-                          <input v-model = 'newMember.DateofBirth'type="date" name="DateofBirth" id="DateofBirth" value="" placeholder="DOB" />
+                          <input v-model = 'newMember.dateofBirth'type="date" name="dateofBirth" id="dateofBirth" value="" placeholder="DOB" />
                         </div>
 												<div class="col-12">
 													<input v-model = 'newMember.email'type="text" name="email" id="email" value="" placeholder="Email" />
+												</div>
+												<div class="col-12">
+													<input v-model = 'newMember.workNumber'type="text" name="workNumber" id="workNumber" value="" placeholder="Work Number" />
+												</div>
+												<div class="col-12">
+													<input v-model = 'newMember.mobileNumber'type="text" name="mobileNumber" id="mobileNumber" value="" placeholder="Mobile Number" />
 												</div>
                         <div class="col-6 col-12-small">
                           <input type="checkbox" id="demo-copy" name="demo-copy">

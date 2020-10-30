@@ -14,7 +14,9 @@ var App = new Vue({
       email:'',
       position:'',
       isActive:'',
-      dateofBirth:''
+      dateofBirth:'',
+      workNumber:'',
+      mobileNumber:''
   }],
   newMember:{
     firstName:'',
@@ -29,7 +31,10 @@ var App = new Vue({
     email:'',
     position:'',
     isActive:'',
-    dateofBirth:''
+    dateofBirth:'',
+    workNumber:'',
+    mobileNumber:''
+
   }
   },
   created(){
@@ -80,7 +85,9 @@ newMemberData() {
     email:'',
     position:'',
     isActive:'',
-    dateofBirth:''
+    dateofBirth:'',
+    workNumber:'',
+    mobileNumber:''
 }
 
 },
