@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Members</title>
+		<title>Elements - Hyperspace by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="css/main.css" />
@@ -14,222 +14,156 @@
 	</head>
 	<body class="is-preload">
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="History.html">History</a></li>
-							<li><a href="members.html">Members</a></li>
-							<li><a href="report.html">Reports</a></li>
-							<li><a href="certifications.html">Certifications</a></li>
-							<li><a href="#four">Contact Us</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+		<!-- Header -->
+		<section id="sidebar">
+			<div class="inner">
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="History.html">History</a></li>
+						<li><a href="members.html">Members</a></li>
+						<li><a href="report.html">Reports</a></li>
+						<li><a href="certifications.html">Certifications</a></li>
+						<li><a href="#four">Contact Us</a></li>
+					</ul>
+				</nav>
+			</div>
+		</section>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
+				<!-- Main -->
+					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1>Members</h1>
-							<p></p>
-						</div>
-					</section>
+							<h1 class="major">Members</h1>
 
-				<!-- One -->
-					<!-- <section id="one" class="wrapper style2 spotlights"> -->
-						<section>
-						<!--	<a href="#" class="image"><img src="css/images/pic01.jpg" alt="" data-position="center center" /></a> -->
 							<div class="content" id="PersonalID">
 								<div class="inner">
-                <!-- Table -->
-                  <section>
-                    <h2>Existing Members</h2>
-          					<div class="container-fluid">
-                    	<div class="row">
-												<table>
-	    										<thead>
-			        							<tr>
-															<th>Personal ID</th>
-									            <th>First Name</th>
-									            <th>Last Name</th>
-									            <th>Street</th>
-									            <th>City</th>
-									            <th>State</th>
-									            <th>Zip Code</th>
-									            <th>Email</th>
-									            <th>Date of Birth</th>
-									            <th>Gender</th>
-									            <th>Position</th>
-									            <th>Radio Number</th>
-									            <th>Station Number</th>
-									            <th>Is Active</th>
-															<th>Work Number</th>
-															<th>Mobile Number</th>
-			        						</tr>
-	    						      </thead>
-	    									<tbody>
-													<tr v-for = "person in persons">
-														<td>{{ person.PersonalID}}</td>
-									          <td>{{ person.firstName}}</td>
-									          <td>{{ person.lastName}}</td>
-									          <td>{{ person.street}}</td>
-									          <td>{{ person.city}}</td>
-									          <td>{{ person.state}}</td>
-									          <td>{{ person.zipcode}}</td>
-									          <td>{{ person.email}}</td>
-									          <td>{{ person.dateofBirth}}</td>
-									          <td>{{ person.gender}}</td>
-									          <td>{{ person.position}}</td>
-									          <td>{{ person.radioNumber}}</td>
-									          <td>{{ person.stationNumber}}</td>
-									          <td>{{  person.isActive}}</td>
-														<td>{{  person.workNumber}}</td>
-														<td>{{  person.mobileNumber}}</td>
-			        					</tr>
-			    					</tbody>
-									</table>
-									</div>
-          				</div>
+							<!-- Table -->
+								<section>
+									<h2>Current Members</h2>
+									<div class="table-wrapper">
+										<div class="inner">
+										<table>
+											<table>
+												<thead>
+													<tr>
+														<th>Personal ID</th>
+														<th>First Name</th>
+														<th>Last Name</th>
+														<th>Street</th>
+														<th>City</th>
+														<th>State</th>
+														<th>Zip Code</th>
+														<th>Email</th>
+														<th>Date of Birth</th>
+														<th>Gender</th>
+														<th>Position</th>
+														<th>Radio Number</th>
+														<th>Station Number</th>
+														<th>Is Active</th>
+														<th>Work Number</th>
+														<th>Mobile Number</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr v-for = "person in persons">
+													<td>{{ person.PersonalID}}</td>
+													<td>{{ person.firstName}}</td>
+													<td>{{ person.lastName}}</td>
+													<td>{{ person.street}}</td>
+													<td>{{ person.city}}</td>
+													<td>{{ person.state}}</td>
+													<td>{{ person.zipcode}}</td>
+													<td>{{ person.email}}</td>
+													<td>{{ person.dateofBirth}}</td>
+													<td>{{ person.gender}}</td>
+													<td>{{ person.position}}</td>
+													<td>{{ person.radioNumber}}</td>
+													<td>{{ person.stationNumber}}</td>
+													<td>{{  person.isActive}}</td>
+													<td>{{  person.workNumber}}</td>
+													<td>{{  person.mobileNumber}}</td>
+											</tr>
+									</tbody>
+								</table>
+								</div>
+							</div>
 
-                <!-- Form -->
-                  <div>
-                    <section>
-                    <h2>Add New Member</h2>
-                    <form method="post" v-on:submit.prevent = "addUser()">
-                      <div class="form-group row">
-                        <div class="col-12">
-                          <input v-model = 'newMember.firstName'type="text" name="firstName" id="firstName" value="" placeholder="First Name" />
-                        </div>
-          							<div class="col-12">
-          								<input v-model = 'newMember.lastName' type="text" name="lastName" id="lastName" value="" placeholder="Last Name" />
-          							</div>
-                        <div class="col-12">
-                          <input v-model = 'newMember.street'type="text" name="street" id="street" value="" placeholder="Street Address" />
-                        </div>
-                        <div class="col-12">
-                          <input v-model = 'newMember.city' type="text" name="city" id="city" value="" placeholder="City" />
-                        </div>
-                        <div class="col-12">
-                          <input v-model = 'newMember.zipcode'type="text" name="zipcode" id="zipcode" value="" placeholder="Zip Code" />
-                        </div>
-                        <div class="col-12">
-                          <input v-model = 'newMember.state'type="text" name="state" id="state" value="" placeholder="State" />
-                        </div>
-                        <div class="col-12">
-                          <input v-model = 'newMember.radioNumber'type="text" name="radioNumber" id="radioNumber" value="" placeholder="Radio Number" />
-                        </div>
-                        <div class="col-12">
-                          <input v-model = 'newMember.stationNumber' type="text" name="stationNumber" id="stationNumber" value="" placeholder="Station Number" />
-                        </div>
-          							<div class="col-12">
-                          <input v-model = 'newMember.gender'type="text" name="gender" id="gender" value="" placeholder="Gender" />
-                        </div>
-          							<div class="col-12">
-                          <input v-model = 'newMember.position'type="text" name="position" id="position" value="" placeholder="Position" />
-                        </div>
-												<div class="col-12">
-													<input v-model = 'newMember.isActive'type="text" name="isActive" id="isActive" value="" placeholder="Is Active" />
-												</div>
-          							<div class="col-12">
-                          <input v-model = 'newMember.dateofBirth'type="date" name="dateofBirth" id="dateofBirth" value="" placeholder="DOB" />
-                        </div>
-												<div class="col-12">
-													<input v-model = 'newMember.email'type="text" name="email" id="email" value="" placeholder="Email" />
-												</div>
-												<div class="col-12">
-													<input v-model = 'newMember.workNumber'type="text" name="workNumber" id="workNumber" value="" placeholder="Work Number" />
-												</div>
-												<div class="col-12">
-													<input v-model = 'newMember.mobileNumber'type="text" name="mobileNumber" id="mobileNumber" value="" placeholder="Mobile Number" />
-												</div>
-                        <div class="col-6 col-12-small">
-                          <input type="checkbox" id="demo-copy" name="demo-copy">
-                          <label for="demo-copy">Email me a copy</label>
-                        </div>
-                        <div class="col-6 col-12-small">
-                          <input type="checkbox" id="demo-human" name="demo-human" checked>
-                          <label for="demo-human">Not a robot</label>
-                        </div>
-                        <div class="col-12">
-                          <textarea name="demo-message" id="demo-message" placeholder="Enter Further Details" rows="6"></textarea>
-                        </div>
+								<div>
+									<section>
+									<h2>Add New Member</h2>
+									<form method="post" v-on:submit.prevent = "addUser()">
+										<div class="form-group row">
+											<div class="col-12">
+												<input v-model = 'newMember.firstName'type="text" name="firstName" id="firstName" value="" placeholder="First Name" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.lastName' type="text" name="lastName" id="lastName" value="" placeholder="Last Name" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.street'type="text" name="street" id="street" value="" placeholder="Street Address" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.city' type="text" name="city" id="city" value="" placeholder="City" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.zipcode'type="text" name="zipcode" id="zipcode" value="" placeholder="Zip Code" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.state'type="text" name="state" id="state" value="" placeholder="State" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.radioNumber'type="text" name="radioNumber" id="radioNumber" value="" placeholder="Radio Number" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.stationNumber' type="text" name="stationNumber" id="stationNumber" value="" placeholder="Station Number" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.gender'type="text" name="gender" id="gender" value="" placeholder="Gender" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.position'type="text" name="position" id="position" value="" placeholder="Position" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.isActive'type="text" name="isActive" id="isActive" value="" placeholder="Is Active" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.dateofBirth'type="date" name="dateofBirth" id="dateofBirth" value="" placeholder="DOB" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.email'type="text" name="email" id="email" value="" placeholder="Email" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.workNumber'type="text" name="workNumber" id="workNumber" value="" placeholder="Work Number" />
+											</div>
+											<div class="col-12">
+												<input v-model = 'newMember.mobileNumber'type="text" name="mobileNumber" id="mobileNumber" value="" placeholder="Mobile Number" />
+											</div>
+											<div class="col-12">
+												<textarea name="demo-message" id="demo-message" placeholder="Enter Further Details" rows="6"></textarea>
+											</div>
 
+											<div class="col-12">
+												<div class='col-4'>
 												<br>
+												<input type="submit" class="button" value = "Create Member" id="submitNewComment">
+												</div>
 
-
-                        <div class="col-12">
-          								<div class='col-4'>
-													<br>
-                  				<input type="submit" class="button" value = "Create Member" id="submitNewComment">
-          								</div>
-													<br>
-          								<div class='col-4'>
-          									<!-- <form v-on:submit.prevent="fetchUser">
-          										<button type="submit" class="btn btn-primary" value="submit">Edit Member</button>
-          									</form> -->
-          								</div>
-          								<div class='col-4'>
-          									<!-- <form v-on:submit.prevent="fetchUser">
-          										<button type="submit" class="btn btn-primary" value="submit">Delete Member</button>
-          									</form> -->
-          								</div>
-                        </div>
-                      </div>
-                    </form>
-                  </section>
-                  </div>
+											</div>
+										</div>
+									</form>
+								</section>
 								</div>
 							</div>
 						</div>
-						</section>
-
-
-								<!-- two -->
-
-							<!-- four -->
-
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Oconee County, GA 30621-30677<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">OconeeCounty@gmail.com</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(456) 324-9876</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
+					</div>
 					</section>
 
-			</div>
 
 		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
+			<footer id="footer" class="wrapper alt">
 				<div class="inner">
 					<ul class="menu">
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
@@ -250,4 +184,4 @@
 		<script src="js/members.app.js"></script>
 
 	</body>
-	</html>
+</html>

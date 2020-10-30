@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+  <title>Oconee County Fire Rescue</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="css/main.css" />
+  <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+  <!-- Sidebar -->
+    <section id="sidebar">
+      <div class="inner">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="History.html">History</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="report.html">Reports</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1 class="major">Current Members</h1>
+              <!-- dropdown from https://www.w3schools.com/howto/howto_css_dropdown.asp & https://stackoverflow.com/questions/6315437/display-selected-item-from-dropdown-onchange-function-into-html-label-through-ja -->
+              <div class="container-fluid">
+                <div class="row">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Personal ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Street</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip Code</th>
+                        <th>Email</th>
+                        <th>Date of Birth</th>
+                        <th>Gender</th>
+                        <th>Position</th>
+                        <th>Radio Number</th>
+                        <th>Station Number</th>
+                        <th>Is Active</th>
+                        <th>Work Number</th>
+                        <th>Mobile Number</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for = "person in persons">
+                      <td>{{ person.PersonalID}}</td>
+                      <td>{{ person.firstName}}</td>
+                      <td>{{ person.lastName}}</td>
+                      <td>{{ person.street}}</td>
+                      <td>{{ person.city}}</td>
+                      <td>{{ person.state}}</td>
+                      <td>{{ person.zipcode}}</td>
+                      <td>{{ person.email}}</td>
+                      <td>{{ person.dateofBirth}}</td>
+                      <td>{{ person.gender}}</td>
+                      <td>{{ person.position}}</td>
+                      <td>{{ person.radioNumber}}</td>
+                      <td>{{ person.stationNumber}}</td>
+                      <td>{{  person.isActive}}</td>
+                      <td>{{  person.workNumber}}</td>
+                      <td>{{  person.mobileNumber}}</td>
+                  </tr>
+              </tbody>
+            </table>
+            </div>
+            </div>
+
+              <div id='one' class = 'container-fluid'>
+                <h2> Expired Certifcations Report </h2>
+                <div id='PersonalID'>
+                  <table class = 'row'>
+                    <thread>
+                      <tr>
+                        <th> Personal ID </th>
+                        <th> First Name </th>
+                        <th> Last Name </th>
+                        <th> Certification </th>
+                        <th> Date Expired </th>
+                      </tr>
+                    </thread>
+                    <tbody>
+                      <tr v-for="certification in certifications" v-on:click=''>
+                        <td scope ='row'> {{ person.PersonalID}} </td>
+                        <td> {{ person.firstName}} </td>
+                        <td> {{ person.lastName}} </td>
+                        <td> {{ certification.CertificationID}} </td>
+                        <td> {{ certification.expirationDate}} </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                </div>
+                <div id='one' class = 'container-fluid'>
+                  <h2> Custom Member Report</h2>
+                  <div id='PersonalID'>
+                    <table class = 'row'>
+                      <thread>
+                        <tr>
+                          <th> First Name </th>
+                          <th> Last Name </th>
+                          <th> Station Number </th>
+                          <th> Radio Number </th>
+                          <th> Email </th>
+                        </tr>
+                      </thread>
+                      <tbody>
+                        <tr v-for="certification in certifications" v-on:click=''>
+                          <td scope ='row'> {{ person.firstName}} </td>
+                          <td> {{ person.lastName}} </td>
+                          <td>  {{ person.stationNumber}} </td>
+                          <td> {{ person.radioNumber}} </td>
+                          <td> {{ person.email}} </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  </div>
+
+
+						</div>
+
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.scrollex.min.js"></script>
+    <script src="js/jquery.scrolly.min.js"></script>
+    <script src="js/browser.min.js"></script>
+    <script src="js/breakpoints.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+
+	</body>
+</html>
