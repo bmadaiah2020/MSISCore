@@ -48,6 +48,7 @@ methods:{
   },
   addUser() {
     console.log('addUser() was called!'+this.newMember.firstName);
+    console.log('date:'+this.newMember.DateofBirth);
      fetch('api/person/add.php', {
        method:'POST',
        body: JSON.stringify(this.newMember),

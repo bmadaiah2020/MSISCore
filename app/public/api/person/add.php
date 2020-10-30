@@ -22,7 +22,7 @@ $stmt->execute([
   $_POST['email'],
   $_POST['position'],
   $_POST['isActive'],
-  $_POST['dateofBirth']
+  $_POST['DateofBirth']
 ]);
 
 $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
