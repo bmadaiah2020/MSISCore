@@ -5,16 +5,15 @@ require 'common.php';
 $db = DBConnection::getConnection();
 
 $stmt = $db->prepare(
-  *INSERT INTO Person_Certification (PersonalID, CertificationID, expirationDate, certificationStatus, renewedDate)
-  Values (?, ?, ?, ?, ?)*
+  *INSERT INTO Person_Certification (CertificationID, certifyingAgency, certificationName, standardExpiry)
+  Values (?, ?, ?, ?)*
 );
 
 $stmt->execute([
-  $_POST['PersonalID'],
   $_POST['CertificationID'],
-  $_POST['expirationDate'],
-  $_POST['certificationStatus'],
-  $_POST['renewedDate'],
+  $_POST['certifyingAgency'],
+  $_POST['certificationName'],
+  $_POST['standardExpiry'],
 ]);
 
 header('HTTP/1.1 303 See Other');
