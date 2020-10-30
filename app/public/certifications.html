@@ -53,14 +53,41 @@
           					<div class="container-fluid">
                     	<div class="row" id="CertificationID">
           						<div class="certifications" v-for="certification in certifications">
-          						<span class ="CertificationID"> {{ Certification.CertificationID}}</span>,
-          						<span class ="certifyingAgency"> {{ Certification.certifyingAgency}}</span>,
-          						<span class ="certificationName"> {{ Certification.certificationName}}</span>,
-          						<span class ="standardExpiry"> {{ Certification.standardExpiry}}</span>,
+          						<span class ="CertificationID"> {{Certification.CertificationID}}</span>,
+          						<span class ="certifyingAgency"> {{Certification.certifyingAgency}}</span>,
+          						<span class ="certificationName"> {{Certification.certificationName}}</span>,
+          						<span class ="standardExpiry"> {{Certification.standardExpiry}}</span>,
           					</div></br>
                     </div>
           					</div>
-
+										<!-- Table -->
+										<div id="commentPage">
+										  <table id="commentTable" class="table table-striped table-bordered">
+										    <thead>
+										      <tr>
+										        <th scope="col">Certifcation ID</th>
+										        <th scope="col">Certifying Agency</th>
+														<th scope="col">Certification Name</th>
+														<th scope="col">Standard Expiry</th>
+										      </tr>
+										    </thead>
+										    <tbody class="Certifications" id="CommentTableBody">
+										      <tr class="Certifications" v-for="certification in certificationList">
+										        <td class="CertificationID">{{Certification.CertificationID}}</td>
+										        <td class ="certifyingAgency"> {{Certification.certifyingAgency}}</td>
+														<td class ="certificationName"> {{Certification.certificationName}}</td>
+														<td class ="standardExpiry"> {{Certification.standardExpiry}}</td>
+										      </tr>
+										    </tbody>
+										  </table>
+										  <!-- <form id="newCommentForm" method="post" v-on:submit.prevent="handleNewComment()">
+										    <label for="comment">Comment:</label>
+										    <br>
+										    <textarea id="commentText" name="comment" rows="4" cols="50" v-model="newCommentForm.commentText">
+										    </textarea>
+										    <button id="submitNewComment" type="submit" class="btn btn-primary">Add Comment</button>
+										  </form>
+										</div> -->
                 <!-- Form -->
                   <div>
                     <section>
