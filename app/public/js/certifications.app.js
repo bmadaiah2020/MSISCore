@@ -10,11 +10,10 @@ var app = new Vue({
 
     newCertificationData() {
       return {
-        PersonalID: '',
-        CertificationID: '',
-        expirationDate: '',
-        certificationStatus: '',
-        renewedDate: ''
+        CertifcationID: '',
+        certifyingAgency: '',
+        certificationName: '',
+        standardExpiry: '',
       }
     },
 

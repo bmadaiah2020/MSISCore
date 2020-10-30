@@ -51,13 +51,12 @@
                   <section>
                     <h2>Existing Members</h2>
           					<div class="container-fluid">
-                    	<div class="row" id="PersonalID">
+                    	<div class="row" id="CertificationID">
           						<div class="certifications" v-for="certification in certifications">
-          						<span class ="PersonalID"> {{ certification.PersonalID}}</span>,
-          						<span class ="CertificationID"> {{ certification.CertificationID}}</span>,
-          						<span class ="expirationDate"> {{ certification.expirationDate}}</span>,
-          						<span class ="certificationStatus"> {{ certification.certificationStatus}}</span>,
-          						<span class ="renewedDate"> {{ certification.renewedDate}}</span>,
+          						<span class ="CertificationID"> {{ Certification.CertificationID}}</span>,
+          						<span class ="certifyingAgency"> {{ Certification.certifyingAgency}}</span>,
+          						<span class ="certificationName"> {{ Certification.certificationName}}</span>,
+          						<span class ="standardExpiry"> {{ Certification.standardExpiry}}</span>,
           					</div></br>
                     </div>
           					</div>
