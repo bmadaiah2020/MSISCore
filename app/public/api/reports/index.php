@@ -6,7 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM Person_Certification WHERE certificationStatus > '10-30-2020'';
+$sql = 'SELECT * FROM Person_Certification';
 $vars = [];
 
 if (isset($_GET['PersonalID'])) {

@@ -1,36 +1,38 @@
 var App = new Vue({
   el: "#expired",
   data:{
-    expiredcert:[{
+    exreports:[{
       PersonalID: '',
       CertificationID: '',
       expirationDate: '',
       renewedDate: ''
-  }]
+  }],
+  newCert:{
+    PersonalID: '',
+    CertificationID: '',
+    expirationDate: '',
+    renewedDate: ''
+
+  }
 
   },
 
   methods:{
-      fetchUser() {
+      fetchexreports() {
         fetch("api/reports/")
       .then(response => response.json())
       .then(json =>{
-        this.expiredcert=json;
-        console.log(this.expiredcert);
+        this.exreports=json;
+        console.log(this.exreports);
       });
 
-  created(){
-    this.fetchUser();
-  },
-
-
 
   },
-  addUser() {
-    console.log('addUser() was called!'+this.newMember.firstName);
-     fetch('api/person/add.php', {
+  createCert() {
+    console.log('createCert() was called!'+this.newCert.PersonalID);
+     fetch('api/reports/add.php', {
        method:'POST',
-       body: JSON.stringify(this.newMember),
+       body: JSON.stringify(this.newCert),
        headers: {
          "Content-Type": "application/json; charset=utf-8"
        }
@@ -39,27 +41,18 @@ var App = new Vue({
      .then( json => {
        console.log("Returned from post:", json);
        // TODO: test a result was returned!
-       this.persons.push(json[0]);
-       this.newMember = this.newMemberData();
+       this.exreports.push(json[0]);
+       this.newCert = this.newCertData();
      });
      console.log("Creating (POSTing)...!");
-     console.log(this.newMember);
+     console.log(this.newCert);
    },
-newMemberData() {
+newCertData() {
   return{
-    firstName:'',
-    lastName:'',
-    street:'',
-    city:'',
-    state:'',
-    zipcode:'',
-    radioNumber:'',
-    stationNumber:'',
-    gender:'',
-    email:'',
-    position:'',
-    isActive:'',
-    dateofBirth:''
+    PersonalID: '',
+    CertificationID: '',
+    expirationDate: '',
+    renewedDate: ''
 }
 
 },
@@ -67,5 +60,9 @@ newMemberData() {
     return moment.utc(d).local().calendar();
   }
 }
+created(){
+  this.fetcexhreports();
+},
+
 
 })
