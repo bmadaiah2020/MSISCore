@@ -49,29 +49,35 @@
                 <p id="demo"></p>
 
               </div>
-              <div id='expired' class = 'container-fluid'>
-                <h2> Expired Certifcations Report </h2>
-                <div class="table-wrapper">
-                  <table>
-                    <thread>
-                      <tr>
-                        <th> Personal ID </th>
-                        <th> Certification </th>
-                        <th> Date Expired </th>
-                        <th> Renewed Date </th>
-                      </tr>
-                    </thread>
-                    <tbody>
-                      <tr v-for="Person_Certification in exreports">
-                        <td scope ='row'> {{ Person_Certification.PersonalID}} </td>
-                        <td> {{ Person_Certification.CertificationID}} </td>
-                        <td> {{ Person_Certification.expirationDate}} </td>
-                        <td> {{ Person_Certification.renewedDate}} </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                </div>
+              <div class="content" id="expiredRep">
+								<div class="inner">
+							<!-- Table -->
+								<section>
+									<h2>Expired Certifcations Report</h2>
+									<div class="table-wrapper">
+										<div class="inner">
+										<table>
+											<thead>
+												<tr>
+													<th>Personal ID</th>
+													<th>Certification</th>
+													<th>Date Expired</th>
+													<th>Renewed Date</th>
+											 </tr>
+										 </thead>
+										<tbody>
+											<tr v-for = "reports in exreports">
+                        <td> {{ reports.PersonalID}} </td>
+                        <td> {{ reports.CertificationID}} </td>
+                        <td> {{ reports.expirationDate}} </td>
+                        <td> {{ reports.renewedDate}} </td>
+										  </tr>
+									 </tbody>
+								  </table>
+								 </div>
+							 </div>
+             </div>
+           </div>
 
 
 
@@ -127,6 +133,7 @@
     <script src="js/breakpoints.min.js"></script>
     <script src="js/util.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/expired.app.js"></script>
 
 	</body>
 </html>

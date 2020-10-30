@@ -6,7 +6,7 @@ $db = DbConnection::getConnection();
 
 $stmt = $db->prepare(
   'INSERT INTO Person_Certification (PersonalID, CertificationID, expirationDate, renewedDate)
-  Values (?, ?, ?, ?, ?)'
+  Values (?, ?, ?, ?)'
 );
 
 $stmt->execute([
@@ -17,4 +17,4 @@ $stmt->execute([
 ]);
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/?guid=' . $guid);
+header('Location: ../reports/?guid=' . $guid);

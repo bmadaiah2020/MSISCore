@@ -1,5 +1,5 @@
 var App = new Vue({
-  el: "#expired",
+  el: "#expiredRep",
   data:{
     exreports:[{
       PersonalID: '',
@@ -16,9 +16,12 @@ var App = new Vue({
   }
 
   },
+  created(){
+    this.fetchUser();
+  },
 
   methods:{
-      fetchexreports() {
+      fetchUser() {
         fetch("api/reports/")
       .then(response => response.json())
       .then(json =>{
@@ -28,8 +31,8 @@ var App = new Vue({
 
 
   },
-  createCert() {
-    console.log('createCert() was called!'+this.newCert.PersonalID);
+  addUser() {
+    console.log('addUser() was called!'+this.newCert.PersonalID);
      fetch('api/reports/add.php', {
        method:'POST',
        body: JSON.stringify(this.newCert),
@@ -60,9 +63,5 @@ newCertData() {
     return moment.utc(d).local().calendar();
   }
 }
-created(){
-  this.fetchexreports();
-},
-
 
 })
