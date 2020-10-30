@@ -61,7 +61,7 @@ newCertData() {
   }
 }
 created(){
-  this.fetcexhreports();
+  this.fetchexreports();
 },
 
 

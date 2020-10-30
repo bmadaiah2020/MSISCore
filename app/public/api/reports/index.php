@@ -21,7 +21,7 @@ $stmt->execute($vars);
 $reports = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($reports, JSON_PRETTY_PRINT);
+$json = json_encode($Person_Certification, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');
