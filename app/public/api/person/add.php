@@ -31,4 +31,5 @@ $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.ph
 
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../person/?id=' . $pk);
+header('Content-Type: application/json');
+header('Location: ../person/?PersonalID=' . $pk);

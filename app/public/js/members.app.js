@@ -2,7 +2,7 @@ var App = new Vue({
   el: "#PersonalID",
   data:{
     persons:[{
-      PersoanlID:'',
+      PersonalID:'',
       firstName:'',
       lastName:'',
       street:'',
@@ -37,7 +37,7 @@ var App = new Vue({
     workNumber:'',
     mobileNumber:''
   },
-    PersonalID:{},
+    PersonID:{},
   },
   created(){
     this.fetchUser();
@@ -74,18 +74,18 @@ methods:{
      console.log(this.newMember);
    },
 
-   deleteMember(evt){
-         console.log(this.PersonalId)
+   deleteMember(){
+         console.log(this.PersonID)
          fetch('api/person/memberDelete.php', {
              method: 'POST',
-             body: JSON.stringify(this.PersonalId),
+             body: JSON.stringify(this.PersonID),
              headers: {
                "Content-Type": "application/json; charset=utf-8"
              }
            })
 
          console.log("Creating (POSTing)...!");
-         console.log(this.PersonalId);
+         console.log(this.PersonID);
        },
 newMemberData() {
   return{
