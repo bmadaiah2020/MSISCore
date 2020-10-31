@@ -2,18 +2,19 @@ var app = new Vue({
   el: "#CertificationPage",
   data:{
     certificationList: [],
-    newcertificationForm: {}
+    newcertificationForm: {},
+    certifications:[{}]
   },
 
 
   methods: {
-
+    
     newCertificationData() {
       return {
-        PersonalID: '',
         CertificationID: '',
-        expirationDate: '',
-        renewedDate: ''
+        certifyingAgency: '',
+        certificationName: '',
+        standardExpiry: ''
       }
     },
 
