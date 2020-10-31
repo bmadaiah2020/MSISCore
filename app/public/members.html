@@ -161,28 +161,30 @@
 								</section>
 								</div>
 							</div>
-						</div>
-					</div>
+
+
 					</section>
 
 
 
-					<form v-on:submit.prevent="deleteMember">
+					<form v-on:submit.prevent="deleteMember()">
 						<div class="form-group row">
 							<div class="col-12">
 								<div class="members">
-					        <label for="PersonalID">Personal Id:</label>
-							 <input type="text" v-model="PersoanlId.PersonalID" class="form-control" id="PersonalID">
+					        <label for="person_ID">Personal Id:</label>
+							 <input type="text" v-model="PersonalID.PersonalID" class="form-control" id="person_ID">
 							</div>
 
 
-			      <div></br>
-			        <input type="submit" value="Delete Member" class="button">
-			      </div>
-			    </form>
-
-			  </div>
-
+			      	<div></br>
+			        	<input type="submit" value="Delete Member" class="button">
+			      	</div>
+			  		</div>
+					</div>
+		    </form>
+</div>
+</div>
+</div>
 
 
 		<!-- Footer -->
