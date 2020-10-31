@@ -7,13 +7,13 @@ var App = new Vue({
       expirationDate: '',
       renewedDate: ''
   }],
-  newCert:{
-    PersonalID: '',
-    CertificationID: '',
-    expirationDate: '',
-    renewedDate: ''
-
-  }
+  // newCert:{
+  //   PersonalID: '',
+  //   CertificationID: '',
+  //   expirationDate: '',
+  //   renewedDate: ''
+  //
+  // }
 
   },
   created(){
