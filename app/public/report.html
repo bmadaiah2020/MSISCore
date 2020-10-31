@@ -40,12 +40,13 @@
               <h4> Please select a report to view </h4>
               <!-- dropdown from https://www.w3schools.com/howto/howto_css_dropdown.asp & https://stackoverflow.com/questions/6315437/display-selected-item-from-dropdown-onchange-function-into-html-label-through-ja -->
               <div id="label"></div>
-              <!-- <div class="dropdown">
+              <div class="dropdown">
                 <select id="mySelect" onchange="copy();">
                   <option>Select a Report:</option>
-                  <option onclick="launch(event, 'expired')" >Expired Certifications</option>
+                  <option class='repview' onclick="launch(event, 'expired')" ></option>
                   <option  onclick="launch(event, 'filter')">Member List</option>
-                </select> -->
+                </select>
+              </div>
                 <p id="demo"></p>
                 <div class ="dropdown">
                   <button class='repview' onclick="launch(event, 'expired')" >Expired Certifications</button>
