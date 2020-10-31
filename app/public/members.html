@@ -93,7 +93,7 @@
 
 								<div>
 									<section>
-									<h2>Add New Member</h2>
+									<h2>Add New Member | Please fil out all boxes:</h2>
 									<form method="post" v-on:submit.prevent = "addUser()">
 										<div class="form-group row">
 											<div class="col-12">
@@ -151,6 +151,9 @@
 												<input type="submit" class="button" value = "Create Member" id="submitNewComment">
 												</div>
 
+
+
+
 											</div>
 										</div>
 									</form>
@@ -160,6 +163,25 @@
 						</div>
 					</div>
 					</section>
+
+
+
+					<form v-on:submit.prevent="deleteMember">
+						<div class="form-group row">
+							<div class="col-12">
+								<div class="members">
+					        <label for="PersonalID">Personal Id:</label>
+							 <input type="text" v-model="PersoanlId.PersonalID" class="form-control" id="PersonalID">
+							</div>
+
+
+			      <div></br>
+			        <input type="submit" value="Delete Member" class="button">
+			      </div>
+			    </form>
+
+			  </div>
+
 
 
 		<!-- Footer -->

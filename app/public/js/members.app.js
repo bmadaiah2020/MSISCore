@@ -71,6 +71,24 @@ methods:{
      console.log("Creating (POSTing)...!");
      console.log(this.newMember);
    },
+
+   deleteMember(evt){
+         console.log(this.PersonalId)
+         fetch('api/records/memberDelete.php', {
+             method: 'POST',
+             body: JSON.stringify(this.PersonalId),
+             headers: {
+               "Content-Type": "application/json; charset=utf-8"
+             }
+           })
+
+         console.log("Creating (POSTing)...!");
+         console.log(this.PersonalId);
+       },
+
+
+
+
 newMemberData() {
   return{
     firstName:'',
@@ -91,9 +109,7 @@ newMemberData() {
 }
 
 },
-  formatDate(d){
-    return moment.utc(d).local().calendar();
-  }
+
 }
 
-})
+});
