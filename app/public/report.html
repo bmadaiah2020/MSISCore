@@ -48,8 +48,8 @@
                 </select> -->
                 <p id="demo"></p>
                 <div class ="dropdown">
-                  <button class='tablinks' onclick="launch(event, 'expired')" >Expired Certifications</button>
-                  <button class='tablinks' onclick="launch(event, 'filter')" >Member List </button>
+                  <button class='repview' onclick="launch(event, 'expired')" >Expired Certifications</button>
+                  <button class='repview' onclick="launch(event, 'filter')" >Member List </button>
                 </div>
 
               </div>
@@ -57,7 +57,7 @@
 								<div class="inner">
 							<!-- Table -->
 								<section>
-                  <div class='tabcontent'>
+                  <div class='displaytable'>
 									<h2>Expired Certifcations Report</h2>
 									<div class="table-wrapper">
 										<div class="inner">
@@ -87,7 +87,7 @@
          </div>
 
 
-              <div class='tabcontent'>
+              <div class='displaytable'>
                 <div id='one' class = 'container-fluid'>
                   <h2> Custom Member Report</h2>
                   <div id='PersonalID'>
@@ -145,6 +145,7 @@
     <script src="js/members.app.js"></script>
     <script src="js/tablesort.min.js"></script>
     <script src="js/csv.js"></script>
+    <script src="js/filter.js"></script>
 
 	</body>
 </html>
