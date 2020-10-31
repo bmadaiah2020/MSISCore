@@ -15,6 +15,16 @@ if (isset($_GET['PersonalID'])) {
   $vars = [ $_GET['PersonalID'] ];
 }
 
+// $sql = 'SELECT * FROM Person_Certification WHERE expirationDate != "0000-00-00"';
+// $vars = [];
+//
+// if (isset($_GET['PersonalID'])) {
+//   // This is an example of a parameterized query
+//   $sql = 'SELECT * FROM Person_Certification WHERE PersonalID = ? and  expirationDate != "0000-00-00"';
+//   $vars = [ $_GET['PersonalID'] ];
+// }
+
+
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
