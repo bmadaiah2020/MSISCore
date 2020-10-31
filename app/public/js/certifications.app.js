@@ -2,12 +2,13 @@ var app = new Vue({
   el: "#CertificationPage",
   data:{
     certificationList: [],
-    newcertificationForm: {}
+    newcertificationForm: {},
+    certifications:[{}]
   },
 
 
   methods: {
-
+    
     newCertificationData() {
       return {
         CertificationID: '',

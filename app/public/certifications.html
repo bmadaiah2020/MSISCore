@@ -52,12 +52,12 @@
                     <h2>Certifications</h2>
           					<div class="container-fluid">
                     	<div class="row" id="CertificationPage">
-          						<div class="certifications" v-for="certification in certifications">
+          						<!-- <div class="certifications" v-for="certification in certifications">
           						<span class ="CertificationID"> {{certification.CertificationID}}</span>,
           						<span class ="certifyingAgency"> {{ certification.certifyingAgency}}</span>,
           						<span class ="certificationName"> {{ certification.certificationName}}</span>,
           						<span class ="standardExpiry"> {{ certification.standardExpiry}}</span>,
-          					</div></br>
+          					</div></br> -->
 										<table id="commentTable" class="table table-striped table-bordered">
 									    <thead>
 									      <tr>
@@ -68,7 +68,7 @@
 									      </tr>
 									    </thead>
 									    <tbody class="Comments" id="CommentTableBody">
-									      <tr class="Comments" v-for="comment in commentList">
+									      <tr class="Comments" v-for="certification in certifications">
 									        <td class="CertificationID">{{certification.CertificationID}}</td>
 									        <td class="certifyingAgency">{{certification.certifyingAgency}}</td>
 													<td class="certificationName">{{certification.certificationName}}</td>
@@ -134,7 +134,7 @@
                         </div>
                         <div class="col-12">
           								<div class='col-4'> -->
-          									<form v-on:submit.prevent="fetchUser">
+          									<form v-on:submit.prevent="handleNewCertification">
           										<button type="submit" class="btn btn-primary" value="submit">Add Certification</button>
           									</form>
           								</div>
@@ -257,6 +257,8 @@
 			</footer>
 
 		<!-- Scripts -->
+		<script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 			<script src="js/jquery.min.js"></script>
 			<script src="js/jquery.scrollex.min.js"></script>
 			<script src="js/jquery.scrolly.min.js"></script>
