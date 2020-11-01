@@ -95,6 +95,10 @@ blockquote, q {
 .dropdown {
   position: relative;
   display: inline-block;
+	overflow: hidden;
+}
+.displaytable {
+	display: none;
 }
 
 .dropdown-content {

@@ -2,6 +2,7 @@ var App = new Vue({
   el: "#PersonalID",
   data:{
     persons:[{
+      PersonalID:'',
       firstName:'',
       lastName:'',
       street:'',
@@ -19,6 +20,7 @@ var App = new Vue({
       mobileNumber:''
   }],
   newMember:{
+    PersonalID:'',
     firstName:'',
     lastName:'',
     street:'',
@@ -34,8 +36,8 @@ var App = new Vue({
     dateofBirth:'',
     workNumber:'',
     mobileNumber:''
-
-  }
+  },
+    PersonID:{},
   },
   created(){
     this.fetchUser();
@@ -72,25 +74,22 @@ methods:{
      console.log(this.newMember);
    },
 
-   deleteMember(evt){
-         console.log(this.PersonalId)
-         fetch('api/records/memberDelete.php', {
+   deleteMember(){
+         console.log(this.PersonID)
+         fetch('api/person/memberDelete.php', {
              method: 'POST',
-             body: JSON.stringify(this.PersonalId),
+             body: JSON.stringify(this.PersonID),
              headers: {
                "Content-Type": "application/json; charset=utf-8"
              }
            })
 
          console.log("Creating (POSTing)...!");
-         console.log(this.PersonalId);
+         console.log(this.PersonID);
        },
-
-
-
-
 newMemberData() {
   return{
+    PersonalID:'',
     firstName:'',
     lastName:'',
     street:'',

@@ -160,9 +160,9 @@
 									</form>
 								</section>
 								</div>
-							</div>
-						</div>
-					</div>
+
+
+
 					</section>
 
 
@@ -171,20 +171,84 @@
 						<div class="form-group row">
 							<div class="col-12">
 								<div class="members">
-					        <label for="PersonalID">Personal Id:</label>
-							 <input type="text" v-model="PersoanlId.PersonalID" class="form-control" id="PersonalID">
+					        <label for="person_ID">Personal Id:</label>
+							 <input type="text" v-model="PersonID.PersonalID" class="form-control" id="person_ID">
 							</div>
 
 
-			      <div></br>
-			        <input type="submit" value="Delete Member" class="button">
-			      </div>
-			    </form>
+			      	<div></br>
+			        	<input type="submit" value="Delete Member" class="button">
+			      	</div>
 
-			  </div>
+			  		</div>
+					</div>
+		    </form>
+			</div>
+
+</div>
+<div id="editperson">
+    <div class = "container">
+  <form>
+      <h2> Edit Person </h2>
+
+  <div class = "row">
+    <label for="personalID">Person Id</label>
+    <input type="text" class="form-control" id="personalID" v-model="editperson.PersonalID" >
+    </div>
+
+      <div class="editperson">
+        <label for="FName">First Name:</label>
+        <input type="text" class="form-control" id="FName" v-model="editperson.firstName" >
+        <label for="LName">Last Name:</label>
+        <input type="text"  class="form-control" id="LName" v-model="editperson.lastName">
+				<label for="street">Street:</label>
+        <input type="text" class="form-control" id="street" v-model="editperson.street" >
+				<label for="city">City:</label>
+        <input type="text" class="form-control" id="city" v-model="editperson.city" >
+        <label for="state">State:</label>
+        <input type="text" class="form-control" id="state" v-model="editperson.state" >
+        <label for="zipcode">Zip Code:</label>
+        <input type="text" class="form-control" id="zipcode" v-model="editperson.zipcode" >
+				<label for="radio">Radio Number:</label>
+        <input type="text" class="form-control" id="radio" v-model="editperson.radioNumber">
+				<label for="station">Station Number:</label>
+				<input type="text" class="form-control" id="station" v-model="editperson.stationNumber" >
+				<label for="gender">Gender:</label>
+				<input type="text" class="form-control" id="gender" v-model="editperson.gender" >
+        <label for="email">Email:</label>
+        <input type="text" class="form-control" id="email" v-model="editperson.email" >
+				<label for="position">Position:</label>
+				<input type="text" class="form-control" id="position" v-model="editperson.position" >
+				<label for="isActive">Is the member active?:</label>
+				<input type="text" class="form-control" id="isActive" v-model="editperson.isActive" >
+				<label for="dateofBirth">Date of Birth:</label>
+        <input type="date"class="form-control" id="dateofBirth"  v-model="editperson.dateofBirth" >
+				<label for="mobilenumber">Mobile Number:</label>
+				<input type="text" class="form-control" id="mobilenumber" v-model="editperson.mobileNumber" >
+				<label for="workNumber">Work Number:</label>
+				<input type="text" class="form-control" id="workNumber" v-model="editperson.workNumber" >
 
 
 
+
+
+
+      </div>
+
+      <div></br>
+        <!-- <input type="submit" value="Edit Member" class="button"> -->
+        <button v-on:click.prevent ="editMember" type="submit" >Edit Member</button>
+      </div>
+
+    </form>
+
+   </div>
+  </div>
+</div>
+</div>
+
+
+</section>
 		<!-- Footer -->
 			<footer id="footer" class="wrapper alt">
 				<div class="inner">
@@ -205,6 +269,7 @@
 		<script src="js/util.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/members.app.js"></script>
+			<script src="js/edit_member.app.js"></script>
 		<script src="js/csv.js"></script>
 
 	</body>
