@@ -12,6 +12,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="css/main.css" />
   <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>
+   $(document).ready(function () {
+       $("#searchInput").keyup(function () {
+           var val = $(this).val();
+
+           $("#searchTable tr td").each(function (i) {
+               var content = $(this).text();
+               if (content.toLowerCase().indexOf(val) == -1) {
+                   $(this).parent().hide();
+               } else {
+                   $(this).parent().show();
+               }
+           });
+       });
+   });
+ </script>
 </head>
 <body class="is-preload">
 
@@ -49,6 +66,8 @@
 
               </div>
 
+
+
                 <div id='one' class = 'container-fluid'>
                   <h2> Custom Member Report</h2>
                   <div id='PersonalID'>
@@ -72,7 +91,7 @@
                         </tr>
                       </tbody>
                     </table>
-                    <button>Export as CSV file</button>
+                    <button onclick='cssv'>Export as CSV file</button>
                   </div>
                   </div>
 
@@ -105,6 +124,7 @@
     <script src="js/expired.app.js"></script>
     <script src="js/members.app.js"></script>
     <script src="js/tablesort.min.js"></script>
+    <script src="js/csv.js"></script>
 
 
 	</body>
