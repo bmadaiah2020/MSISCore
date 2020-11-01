@@ -3,7 +3,13 @@ var app = new Vue({
   data:{
     certificationList: [],
     newcertificationForm: {},
-    certifications:[{}]
+    certifications:[{}],
+    newCertification:{
+      CertificationID:'',
+      certifyingAgency:'',
+      certificationName:'',
+      standardExpiry:'',
+    }
   },
 
 
@@ -17,17 +23,27 @@ var app = new Vue({
       });
 
     },
-
-    newCertificationData() {
-      return {
-        CertificationID: '',
-        certifyingAgency: '',
-        certificationName: '',
-        standardExpiry: ''
-      }
-    },
+    addCertification() {
+      console.log('addCertification() was called!');
+       fetch('api/certification/add.php', {
+         method:'POST',
+         body: JSON.stringify(this.newcertification),
+         headers: {
+           "Content-Type": "application/json; charset=utf-8"
+         }
+       })
+       .then( response => response.json())
+       .then( json => {
+         console.log("Returned from post:"+ json);
+         // TODO: test a result was returned!
+         this.certificationList.push(json[0]);
+         this.newCertification = this.newCertificationData();
+       });
+       console.log("Creating (POSTing)...!");
+       console.log(this.newCertificationData);
+     },
     deleteCertification(evt){
-          console.log(this.CertificationID)
+          console.log(this.certifications)
           fetch('api/certification/certificationDelete.php', {
               method: 'POST',
               body: JSON.stringify(this.CertificationID),
@@ -38,6 +54,14 @@ var app = new Vue({
 
           console.log("Creating (POSTing)...!");
           console.log(this.CertificationID);
+        },
+        newCertificationData() {
+          return {
+            CertificationID: '',
+            certifyingAgency: '',
+            certificationName: '',
+            standardExpiry: ''
+          }
         },
     handleNewCertification(evt) {
       fetch("api/certification/add.php", {
