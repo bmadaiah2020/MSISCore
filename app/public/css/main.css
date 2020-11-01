@@ -31,6 +31,22 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+/** Style from https://www.codecademy.com/forum_questions/55ad460dd3292f1a8200050c **/
+#button {
+    width: 6em;
+    background: #blue;
+    border-radius: 5px;
+		text-decoration: none;
+}
+a {
+    display: block;
+    width: 100%;
+    line-height: 2em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
 /** table sort **/
 th[role=columnheader]:not(.no-sort) {
 	cursor: pointer;
