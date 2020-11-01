@@ -8,7 +8,16 @@ var app = new Vue({
 
 
   methods: {
-    
+    fetchCertification() {
+      fetch("api/certification/")
+      .then(response => response.json())
+      .then(json =>{
+        this.certification=json;
+        console.log(this.certification);
+      });
+
+    },
+
     newCertificationData() {
       return {
         CertificationID: '',
@@ -17,11 +26,23 @@ var app = new Vue({
         standardExpiry: ''
       }
     },
+    deleteCertification(evt){
+          console.log(this.CertificationID)
+          fetch('api/certification/certificationDelete.php', {
+              method: 'POST',
+              body: JSON.stringify(this.CertificationID),
+              headers: {
+                "Content-Type": "application/json; charset=utf-8"
+              }
+            })
 
+          console.log("Creating (POSTing)...!");
+          console.log(this.CertificationID);
+        },
     handleNewCertification(evt) {
       fetch("api/certification/add.php", {
         method: 'POST',
-        body: JSON.stringify(this.newCommentForm),
+        body: JSON.stringify(this.newcertificationForm),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
           }

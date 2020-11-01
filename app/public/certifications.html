@@ -58,7 +58,7 @@
           						<span class ="certificationName"> {{ certification.certificationName}}</span>,
           						<span class ="standardExpiry"> {{ certification.standardExpiry}}</span>,
           					</div></br> -->
-										<table id="commentTable" class="table table-striped table-bordered">
+										<table id="CerificationTable" class="table table-striped table-bordered">
 									    <thead>
 									      <tr>
 									        <th scope="col">Certification ID</th>
@@ -67,20 +67,35 @@
 													<th scope="col">Standard Expiry</th>
 									      </tr>
 									    </thead>
-									    <tbody class="Comments" id="CommentTableBody">
-									      <tr class="Comments" v-for="certification in certifications">
+									    <tbody class="Certifications" id="CertificationTableBody">
+									      <tr class="Certification" v-for="certification in certificationList">
 									        <td class="CertificationID">{{certification.CertificationID}}</td>
 									        <td class="certifyingAgency">{{certification.certifyingAgency}}</td>
 													<td class="certificationName">{{certification.certificationName}}</td>
 													<td class="standardExpiry">{{certification.standardExpiry}}</td>
-													<td class="button" type="submit" class="btn btn-primary" value="submit">Delete</td>
+													<!-- <td class="button" type="submit" class="btn btn-primary" value="delete">Delete</td> -->
 									      </tr>
 									    </tbody>
 									  </table>
                     </div>
           					</div>
+<div class="row" id="CertificationPage">
+										<form v-on:submit.prevent="deleteCertification()">
+											<div class="form-group row">
+												<div class="col-12">
+													<div class="certifications">
+														<label for="CertificationID">Certification Id:</label>
+												 <input type="number" v-model="newcertificationForm.CertificationID" class="form-control" id="CertificationID">
+												</div>
 
 
+											<div></br>
+
+												<input type="submit" value="Delete Certification" class="button">
+											</div>
+										</form>
+
+</div>
                 <!-- Form -->
                   <div>
                     <section>
@@ -88,16 +103,16 @@
                     <form method="post" v-on:submit.prevent = "handleNewCertification()">
                       <div class="form-group row">
                         <div class="col-12">
-                          <input v-model = 'certificationForm.CertificationID'type="text" name="CertificationID" id="CertificationID" value="" placeholder="CertificationID" />
+                          <input v-model = 'newcertificationForm.CertificationID'type="text" name="CertificationID" id="CertificationID" value="" placeholder="CertificationID" />
                         </div>
           							<div class="col-12">
-          								<input v-model = 'certificationForm.certifyingAgency' type="text" name="certifyingAgency" id="certifyingAgency" value="" placeholder="Certifying Agency" />
+          								<input v-model = 'newcertificationForm.certifyingAgency' type="text" name="certifyingAgency" id="certifyingAgency" value="" placeholder="Certifying Agency" />
           							</div>
                         <div class="col-12">
-                          <input v-model = 'certificationForm.certificationName'type="text" name="certificationName" id="certificationName" value="" placeholder="Certification Name" />
+                          <input v-model = 'newcertificationForm.certificationName'type="text" name="certificationName" id="certificationName" value="" placeholder="Certification Name" />
                         </div>
                         <div class="col-12">
-                          <input v-model = 'certificationForm.standardExpiry' type="text" name="standardExpiry" id="standardExpiry" value="" placeholder="Standard Expiry" />
+                          <input v-model = 'newcertificationForm.standardExpiry' type="text" name="standardExpiry" id="standardExpiry" value="" placeholder="Standard Expiry" />
                         </div>
 
                         <!-- <div class="col-12">
@@ -134,7 +149,7 @@
                         </div>
                         <div class="col-12">
           								<div class='col-4'> -->
-          									<form v-on:submit.prevent="handleNewCertification">
+          									<form v-on:submit.prevent="handleNewCertification()">
           										<button type="submit" class="btn btn-primary" value="submit">Add Certification</button>
           									</form>
           								</div>
