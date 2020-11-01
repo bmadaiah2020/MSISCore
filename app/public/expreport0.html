@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+  <title>Oconee County Fire Rescue</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="css/main.css" />
+  <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+  <!-- Sidebar -->
+    <section id="sidebar">
+      <div class="inner">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="History.html">History</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="report.html">Reports</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+        <p>Type something in the input field to search the table for first names, last names or emails:</p>
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+
+				<!-- Main -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1 class="major"> Welcome to our Reports Page!</h1>
+              <h4> Please select a report to view </h4>
+              <!-- dropdown from https://www.w3schools.com/howto/howto_css_dropdown.asp & https://stackoverflow.com/questions/6315437/display-selected-item-from-dropdown-onchange-function-into-html-label-through-ja -->
+              <div id="label"></div>
+              <h2>Select a Report:</h2>
+              <div id='button'>
+                  <a href="expreport.html"><button>Expired Certifications Report</button></a>
+                  <a href="memreport.html"><button>Custom Member Report</button></a>
+
+                <p id="demo"></p>
+
+              </div>
+              <div class="content" id="expiredRep">
+								<div class="inner">
+							<!-- Table -->
+								<section>
+									<h2>Expired Certifcations Report</h2>
+									<div class="table-wrapper">
+										<div class="inner">
+										<table>
+											<thead>
+												<tr>
+													<th>Personal ID</th>
+													<th>Certification</th>
+													<th>Date Expired</th>
+													<th>Renewed Date</th>
+											 </tr>
+										 </thead>
+										<tbody id='myTable'>
+											<tr v-for = "reports in exreports">
+                        <td> {{ reports.PersonalID}} </td>
+                        <td> {{ reports.CertificationID}} </td>
+                        <td> {{ reports.expirationDate}} </td>
+                        <td> {{ reports.renewedDate}} </td>
+										  </tr>
+									 </tbody>
+								  </table>
+                  <button>Export as CSV file</button>
+								 </div>
+							 </div>
+             </div>
+           </div>
+
+
+						</div>
+
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+    <script type="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.scrollex.min.js"></script>
+    <script src="js/jquery.scrolly.min.js"></script>
+    <script src="js/browser.min.js"></script>
+    <script src="js/breakpoints.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/expired.app.js"></script>
+    <script src="js/members.app.js"></script>
+    <script src="js/tablesort.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+	</body>
+</html>
