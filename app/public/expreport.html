@@ -52,6 +52,10 @@
 								<div class="inner">
 							<!-- Table -->
 								<section>
+                  <!-- search from https://www.w3schools.com/bootstrap/bootstrap_filters.asp -->
+                  <p>Type something in the input field to search the table by Certification, Member or Date:</p>
+                  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                  
 									<h2>Expired Certifcations Report</h2>
 									<div class="table-wrapper">
 										<div class="inner">
@@ -64,7 +68,7 @@
 													<th>Renewed Date</th>
 											 </tr>
 										 </thead>
-										<tbody>
+										<tbody id='myTable'>
 											<tr v-for = "reports in exreports">
                         <td> {{ reports.PersonalID}} </td>
                         <td> {{ reports.CertificationID}} </td>
@@ -108,6 +112,17 @@
     <script src="js/expired.app.js"></script>
     <script src="js/members.app.js"></script>
     <script src="js/tablesort.min.js"></script>
+    <!-- fuction for search from https://www.w3schools.com/bootstrap/bootstrap_filters.asp -->
+    <script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 
 
 	</body>

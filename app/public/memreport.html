@@ -13,22 +13,6 @@
   <link rel="stylesheet" href="css/main.css" />
   <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script>
-   $(document).ready(function () {
-       $("#searchInput").keyup(function () {
-           var val = $(this).val();
-
-           $("#searchTable tr td").each(function (i) {
-               var content = $(this).text();
-               if (content.toLowerCase().indexOf(val) == -1) {
-                   $(this).parent().hide();
-               } else {
-                   $(this).parent().show();
-               }
-           });
-       });
-   });
- </script>
 </head>
 <body class="is-preload">
 
@@ -69,6 +53,9 @@
 
 
                 <div id='one' class = 'container-fluid'>
+                  <!-- search from https://www.w3schools.com/bootstrap/bootstrap_filters.asp -->
+                  <p>Type something in the input field to search the table by Member, Station Number or Radio Number:</p>
+                  <input class="form-control" id="myInput" type="text" placeholder="Search..">
                   <h2> Custom Member Report</h2>
                   <div id='PersonalID'>
                     <table class = 'one'>
@@ -81,8 +68,8 @@
                           <th> Email </th>
                         </tr>
                       </thread>
-                      <tbody>
-                        <tr v-for="person in persons" v-on:click=''>
+                      <tbody id='myTable'>
+                        <tr v-for="person in persons">
                           <td scope ='row'> {{ person.firstName}} </td>
                           <td> {{ person.lastName}} </td>
                           <td>  {{ person.stationNumber}} </td>
@@ -125,6 +112,17 @@
     <script src="js/members.app.js"></script>
     <script src="js/tablesort.min.js"></script>
     <script src="js/csv.js"></script>
+    <!-- fuction for search from https://www.w3schools.com/bootstrap/bootstrap_filters.asp -->
+    <script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 
 
 	</body>
