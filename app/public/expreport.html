@@ -51,7 +51,38 @@
               <div class="content" id="expiredRep">
 								<div class="inner">
 							<!-- Table -->
+								<section>
+									<h2>Expired Certifcations Report</h2>
+									<div class="table-wrapper">
+										<div class="inner">
+										<table>
+											<thead>
+												<tr>
+													<th>Personal ID</th>
+													<th>Certification</th>
+													<th>Date Expired</th>
+													<th>Renewed Date</th>
+											 </tr>
+										 </thead>
+										<tbody>
+											<tr v-for = "reports in exreports">
+                        <td> {{ reports.PersonalID}} </td>
+                        <td> {{ reports.CertificationID}} </td>
+                        <td> {{ reports.expirationDate}} </td>
+                        <td> {{ reports.renewedDate}} </td>
+										  </tr>
+									 </tbody>
+								  </table>
+                  <button>Export as CSV file</button>
+								 </div>
+							 </div>
+             </div>
+           </div>
 
+
+						</div>
+
+					</section>
 
 			</div>
 
