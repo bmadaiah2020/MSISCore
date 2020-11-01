@@ -5,7 +5,7 @@ require 'common.php';
 $db = DBConnection::getConnection();
 
 $stmt = $db->prepare(
-  *INSERT INTO Person_Certification (CertificationID, certifyingAgency, certificationName, standardExpiry)
+  *INSERT INTO Certification (CertificationID, certifyingAgency, certificationName, standardExpiry)
   Values (?, ?, ?, ?)*
 );
 
@@ -17,4 +17,4 @@ $stmt->execute([
 ]);
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/?guid=' . $guid);
+header('Content-Type: application/json');
