@@ -7,7 +7,7 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-'DELETE FROM Certificatoin WHERE CertificationID = ?;'
+'DELETE FROM Certification WHERE CertificationID = ?;'
 );
 
 $stmt->execute([
