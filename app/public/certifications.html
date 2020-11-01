@@ -45,13 +45,13 @@
 					<section id="one" class="wrapper style2 spotlights">
 						<section>
 						<!--	<a href="#" class="image"><img src="css/images/pic01.jpg" alt="" data-position="center center" /></a> -->
-							<div class="content">
+							<div class="content" id="CertificationPage">
 								<div class="inner">
                 <!-- Table -->
                   <section>
                     <h2>Certifications</h2>
           					<div class="container-fluid">
-                    	<div class="row" id="CertificationPage">
+                    	<div class="row">
 										<table id="CerificationTable" class="table table-striped table-bordered">
 									    <thead>
 									      <tr>
@@ -72,13 +72,13 @@
 									  </table>
                     </div>
           					</div>
-										<div class="row" id="CertificationPage">
+										<div class="row" >
 										<form v-on:submit.prevent="deleteCertification">
 											<div class="form-group row">
 												<div class="col-12">
 													<div class="certifications">
 														<label for="CertificationID">Certification Id:</label>
-												 <input type="text" v-model="Certification.CertificationID" class="form-control" id="CertificationID"></br>
+												 <input type="text" v-model="newcertification.CertificationID" class="form-control" id="CertificationID"></br>
 
 												<input type="submit" value="Delete Certification" class="button">
 											</div>
@@ -90,20 +90,20 @@
                   <div>
                     <section>
                     <h2>Add Certification</h2>
-                    <form v-on:submit.prevent = "addCertification">
+                    <form v-on:submit.prevent="addCertification()">
                       <div>
                         <label for="certifyingAgency">Certifying Agency:</label>
                           <input type=text v-model = 'newcertification.certifyingAgency' type="text" name="certifyingAgency" id="certifyingAgency" value="" placeholder="Certifying Agency" />
           							<label for="certificationName">Certification Name:</label>
                           <input v-model = 'newcertification.certificationName'type="text" name="certificationName" id="certificationName" value="" placeholder="Certification Name" />
-                        <label for="certificationName">Standard Expiry:</label>
+                        <label for="standardExpiry">Standard Expiry:</label>
                           <input v-model = 'newcertification.standardExpiry' type="text" name="standardExpiry" id="standardExpiry" value="" placeholder="Standard Expiry" />
                         </div>
 
 
-          									<form v-on:submit.prevent="addCertification">
+
           										<button type="submit" class="btn btn-primary" value="submit">Add Certification</button>
-          									</form>
+
                     </form>
                   </section>
                   </div>
