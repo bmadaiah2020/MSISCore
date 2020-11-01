@@ -52,12 +52,6 @@
                     <h2>Certifications</h2>
           					<div class="container-fluid">
                     	<div class="row" id="CertificationPage">
-          						<!-- <div class="certifications" v-for="certification in certifications">
-          						<span class ="CertificationID"> {{certification.CertificationID}}</span>,
-          						<span class ="certifyingAgency"> {{ certification.certifyingAgency}}</span>,
-          						<span class ="certificationName"> {{ certification.certificationName}}</span>,
-          						<span class ="standardExpiry"> {{ certification.standardExpiry}}</span>,
-          					</div></br> -->
 										<table id="CerificationTable" class="table table-striped table-bordered">
 									    <thead>
 									      <tr>
@@ -73,7 +67,6 @@
 									        <td class="certifyingAgency">{{certification.certifyingAgency}}</td>
 													<td class="certificationName">{{certification.certificationName}}</td>
 													<td class="standardExpiry">{{certification.standardExpiry}}</td>
-													<!-- <td class="button" type="submit" class="btn btn-primary" value="delete">Delete</td> -->
 									      </tr>
 									    </tbody>
 									  </table>
@@ -91,7 +84,7 @@
 											</div>
 										</div>
 										</form>
-
+									</div>
 									</div>
                 <!-- Form -->
                   <div>
@@ -107,56 +100,10 @@
                           <input v-model = 'newcertification.standardExpiry' type="text" name="standardExpiry" id="standardExpiry" value="" placeholder="Standard Expiry" />
                         </div>
 
-                        <!-- <div class="col-12">
-                          <select name="demo-category" id="demo-category">
-                            <option value="">- Category -</option>
-                            <option value="1">Manufacturing</option>
-                            <option value="1">Shipping</option>
-                            <option value="1">Administration</option>
-                            <option value="1">Human Resources</option>
-                          </select>
-                        </div> -->
-                        <!-- <div class="col-4 col-12-small">
-                          <input type="radio" id="demo-priority-low" name="demo-priority" checked>
-                          <label for="demo-priority-low">Low</label>
-                        </div>
-                        <div class="col-4 col-12-small">
-                          <input type="radio" id="demo-priority-normal" name="demo-priority">
-                          <label for="demo-priority-normal">Normal</label>
-                        </div>
-                        <div class="col-4 col-12-small">
-                          <input type="radio" id="demo-priority-high" name="demo-priority">
-                          <label for="demo-priority-high">High</label>
-                        </div>
-                        <div class="col-6 col-12-small">
-                          <input type="checkbox" id="demo-copy" name="demo-copy">
-                          <label for="demo-copy">Email me a copy</label>
-                        </div> -->
-                        <!-- <div class="col-6 col-12-small">
-                          <input type="checkbox" id="demo-human" name="demo-human" checked>
-                          <label for="demo-human">Not a robot</label>
-                        </div> -->
-                        <!-- <div class="col-12">
-                          <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-                        </div>
-                        <div class="col-12">
-          								<div class='col-4'> -->
-          									<form v-on:submit.prevent="handleNewCertification()">
+
+          									<form v-on:submit.prevent="addCertification">
           										<button type="submit" class="btn btn-primary" value="submit">Add Certification</button>
           									</form>
-          								</div>
-          								<!-- <div class='col-4'>
-          									<form v-on:submit.prevent="fetchUser">
-          										<button type="submit" class="btn btn-primary" value="submit">Edit Member</button>
-          									</form>
-          								</div> -->
-          								<div class='col-4'>
-          									<!-- <form v-on:submit.prevent="fetchUser">
-          										<button type="submit" class="btn btn-primary" value="submit">Delete Member</button>
-          									</form> -->
-          								</div>
-                        </div>
-                      </div>
                     </form>
                   </section>
                   </div>
