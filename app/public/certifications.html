@@ -97,18 +97,13 @@
                   <div>
                     <section>
                     <h2>Add Certification</h2>
-                    <form method="post" v-on:submit.prevent = "addCertification()">
-                      <div class="form-group row">
-                        <div class="col-12">
-                          <input v-model = 'newcertification.CertificationID'type="text" name="CertificationID" id="CertificationID" value="" placeholder="CertificationID" />
-                        </div>
-          							<div class="col-12">
-          								<input v-model = 'newcertification.certifyingAgency' type="text" name="certifyingAgency" id="certifyingAgency" value="" placeholder="Certifying Agency" />
-          							</div>
-                        <div class="col-12">
+                    <form v-on:submit.prevent = "addCertification">
+                      <div>
+                        <label for="certifyingAgency">Certifying Agency:</label>
+                          <input type=text v-model = 'newcertification.certifyingAgency' type="text" name="certifyingAgency" id="certifyingAgency" value="" placeholder="Certifying Agency" />
+          							<label for="certificationName">Certification Name:</label>
                           <input v-model = 'newcertification.certificationName'type="text" name="certificationName" id="certificationName" value="" placeholder="Certification Name" />
-                        </div>
-                        <div class="col-12">
+                        <label for="certificationName">Standard Expiry:</label>
                           <input v-model = 'newcertification.standardExpiry' type="text" name="standardExpiry" id="standardExpiry" value="" placeholder="Standard Expiry" />
                         </div>
 
