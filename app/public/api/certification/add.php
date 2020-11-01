@@ -5,7 +5,7 @@ require 'common.php';
 $db = DBConnection::getConnection();
 
 $stmt = $db->prepare(
-  *INSERT INTO Person_Certification (CertificationID, certifyingAgency, certificationName, standardExpiry)
+  *INSERT INTO Certification (CertificationID, certifyingAgency, certificationName, standardExpiry)
   Values (?, ?, ?, ?)*
 );
 
