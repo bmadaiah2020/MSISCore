@@ -39,15 +39,7 @@
 							<h1 class="major"> Welcome to our Reports Page!</h1>
               <h4> Please select a report to view </h4>
               <!-- dropdown from https://www.w3schools.com/howto/howto_css_dropdown.asp & https://stackoverflow.com/questions/6315437/display-selected-item-from-dropdown-onchange-function-into-html-label-through-ja -->
-              <div id="label"></div>
-              <h2>Select a Report:</h2>
-              <div id='button'>
-                  <a href="expreport.html"><button>Expired Certifications Report</button></a>
-                  <a href="memreport.html"><button>Custom Member Report</button></a>
 
-                <p id="demo"></p>
-
-              </div>
               <div class="content" id="expiredRep">
 								<div class="inner">
 							<!-- Table -->
@@ -55,7 +47,7 @@
                   <!-- search from https://www.w3schools.com/bootstrap/bootstrap_filters.asp -->
                   <p>Type something in the input field to search the table by Certification, Member or Date:</p>
                   <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                  
+
 									<h2>Expired Certifcations Report</h2>
 									<div class="table-wrapper">
 										<div class="inner">
@@ -82,6 +74,7 @@
 							 </div>
              </div>
            </div>
+           <a href="memreport.html"><button>Custom Member Report</button></a>
 
 
 						</div>
@@ -112,6 +105,7 @@
     <script src="js/expired.app.js"></script>
     <script src="js/members.app.js"></script>
     <script src="js/tablesort.min.js"></script>
+    <script src="js/csv.js"></script>
     <!-- fuction for search from https://www.w3schools.com/bootstrap/bootstrap_filters.asp -->
     <script>
     $(document).ready(function(){

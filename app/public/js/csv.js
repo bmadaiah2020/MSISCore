@@ -1,4 +1,3 @@
-object.onclick = function cssv(){
 function download_csv(csv, filename) {
     var csvFile;
     var downloadLink;
@@ -25,7 +24,7 @@ function download_csv(csv, filename) {
     downloadLink.click();
 }
 
-object.onclick = function export_table_to_csv(html, filename) {
+function export_table_to_csv(html, filename) {
 	var csv = [];
 	var rows = document.querySelectorAll("table tr");
 
@@ -45,4 +44,4 @@ object.onclick = function export_table_to_csv(html, filename) {
 document.querySelector("button").addEventListener("click", function () {
     var html = document.querySelector("table").outerHTML;
 	export_table_to_csv(html, "table.csv");
-})};
+});
