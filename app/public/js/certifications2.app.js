@@ -1,5 +1,5 @@
 Certapp = new Vue({
-  el: "#CertPage",
+  el: "#CertificationPage",
   data:{
     certificationList: [{
       CertificationID:'',
@@ -15,6 +15,7 @@ Certapp = new Vue({
     },
     certID:{}
   },
+
   methods: {
     fetchCertification() {
       fetch("api/certification/index.php")

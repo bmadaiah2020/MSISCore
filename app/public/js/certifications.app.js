@@ -4,12 +4,13 @@ var app = new Vue({
     certificationList: [],
     newcertificationForm: {},
     certifications:[{}],
-    newCertification:{
+    newcertification:{
       CertificationID:'',
       certifyingAgency:'',
       certificationName:'',
-      standardExpiry:'',
-    }
+      standardExpiry:''
+    },
+    certifications: {},
   },
 
 
@@ -24,7 +25,7 @@ var app = new Vue({
 
     },
     addCertification() {
-      console.log('addCertification() was called!');
+      console.log('addCertification() was called!'+this.newcertification.standardExpiry);
        fetch('api/certification/add.php', {
          method:'POST',
          body: JSON.stringify(this.newcertification),
@@ -36,8 +37,8 @@ var app = new Vue({
        .then( json => {
          console.log("Returned from post:"+ json);
          // TODO: test a result was returned!
-         this.certificationList.push(json[0]);
-         this.newCertification = this.newCertificationData();
+         this.certificationList = json;
+         this.newcertification = this.newCertificationData();
        });
        console.log("Creating (POSTing)...!");
        console.log(this.newCertificationData);
@@ -46,14 +47,14 @@ var app = new Vue({
           console.log(this.certifications)
           fetch('api/certification/certificationDelete.php', {
               method: 'POST',
-              body: JSON.stringify(this.CertificationID),
+              body: JSON.stringify(this.certifications),
               headers: {
                 "Content-Type": "application/json; charset=utf-8"
               }
             })
 
           console.log("Creating (POSTing)...!");
-          console.log(this.CertificationID);
+          console.log(this.certifications);
         },
         newCertificationData() {
           return {
@@ -63,23 +64,6 @@ var app = new Vue({
             standardExpiry: ''
           }
         },
-    handleNewCertification(evt) {
-      fetch("api/certification/add.php", {
-        method: 'POST',
-        body: JSON.stringify(this.newcertificationForm),
-        headers: {
-          "Content-Type": "application/json; charset=utf-8"
-          }
-        })
-      .then(response => response.json())
-      .then(json =>  {
-        console.log("Returned from post:", json);
-        this.certificationList = json;
-        this.certificationForm = this.newCertificationData();
-      });
-      console.log("Creating (POSTing)...!");
-      console.log(this.newcertificationForm);
-    },
     },
 
     created() {
